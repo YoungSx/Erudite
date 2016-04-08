@@ -1,0 +1,70 @@
+package com.zzxy.NetDict.API;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.zzxy.NetDict.Entity.User;
+import com.zzxy.NetDict.Service.AccountManage;
+import com.zzxy.NetDict.Tools.JsonData;
+
+/**
+ * Servlet implementation class Login
+ */
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	    super.service(req, resp);
+	    
+	   HttpSession session = req.getSession();
+	    
+	   AccountManage am = new AccountManage();
+	    
+	   User user = am.userLogin(req);
+	    
+	   if(user != null)
+	   {
+	       session.setAttribute("user", user);
+	       //TODO 登录成功后的页面跳转
+	       //resp.sendRedirect(arg0);
+	       JsonData.SendJson(resp, user);
+	   }
+	   else
+	   {
+	       JsonData.SendJson(resp, "登录失败");
+	       
+	       //TODO 登录失败后的处理
+	     //resp.sendRedirect(arg0);
+	   }
+	    
+	}
+
+}
