@@ -43,6 +43,8 @@ public class FileUpload {
         //String path = req.getRealPath("/upload");    
         String path = req.getSession().getServletContext().getRealPath("/upload");
         
+        System.out.println("文件保存路径 == "+path);
+        
         //如果没以下两行设置的话，上传大的 文件 会占用 很多内存，  
         //设置暂时存放的 存储室 , 这个存储室，可以和 最终存储文件 的目录不同  
         /** 

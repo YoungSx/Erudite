@@ -3,13 +3,15 @@
  */
 function submitFile(files){
     var formElement=document.getElementById("formUpload");
-    formElement.action="recev.php";
+    formElement.action="com/zzxy/NetDict/API/Upload";
     var oMyForm = new FormData(formElement);
     if(!(typeof(files) == "undefined"))
         for(var i=0;i<files.length;i++){//files 依次加入oMyForm表单
             oMyForm.append("file"+i,files[i]);
+            
             console.log("file"+i);
         }
+   
     /*
     console.log("files to upload later on :");
     console.log(files);
@@ -23,7 +25,7 @@ function submitFile(files){
     oReq.addEventListener("abort",uploadCanceled,false);
     oReq.addEventListener("loadend",uploadEnd,false);
 
-    oReq.open("POST","http://localhost:8080/recev.php");//目标文件
+    oReq.open("POST","http://localhost:8080/Erudite/Upload");//目标文件
     oReq.send(oMyForm);
 }
 function uploadProgress(event){

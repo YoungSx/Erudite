@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zzxy.NetDict.Service.FileUpload;
+
 /**
  * Servlet implementation class Upload
  */
@@ -37,9 +39,16 @@ public class Upload extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    super.service(req, resp);
 	    
+	    //允许跨源请求   
+	    resp.addHeader("Access-Control-Allow-Origin", "*");
 	    
+//	    resp.Headers.Add("Access-Control-Allow-Origin", "*");
 	    
+	    System.out.println("fileUpload");
 	    
+	    FileUpload fileUpload = new FileUpload();
+	    
+	    fileUpload.saveFile(req);
 	    
 	    
 	}

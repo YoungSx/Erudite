@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <title>Demo</title>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"><!--允许跨源请求-->
     <link rel="stylesheet" href="sources/style/home/layout.css">
     <script src="sources/script/home/upload.js"></script>
     <script src="sources/script/home/navigation.js"></script>
@@ -29,9 +31,9 @@
                 </form>
             </div>
             <div id="fileDiv">
-                <form name="formUpload" id="formUpload">
+                <form name="formUpload" id="formUpload" method = "POST" action = "/com/zzxy/NetDict/API/Upload" enctype = "multipart/form-data">
                     <div class="fileButton">
-                        <input onChange="submitFile()" type="file" name="pic" id="pic" mutiple accept="*/*" class="fileInput">
+                        <input onChange="submitFile()" type="file" name="pic" id="pic" > 
                         <span>上传</span>
                     </div>
                 </form>
