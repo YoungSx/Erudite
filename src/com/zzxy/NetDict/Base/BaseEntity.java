@@ -1,4 +1,4 @@
-package com.zzxy.NetDict.Entity;
+package com.zzxy.NetDict.Base;
 
 public class BaseEntity {
     

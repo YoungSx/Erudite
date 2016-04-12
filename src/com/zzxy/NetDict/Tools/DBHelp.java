@@ -22,7 +22,7 @@ public class DBHelp {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://127.0.0.1:3306/KBMS";
-			conn = DriverManager.getConnection(url,"root","Zxg123456");
+			conn = DriverManager.getConnection(url,"root","zxg123456");
 		}
 		catch(Exception e)
 		{

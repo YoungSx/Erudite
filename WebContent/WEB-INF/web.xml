@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>Erudite</display-name>
   <welcome-file-list>
-    <welcome-file>home.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -50,12 +50,30 @@
   </servlet-mapping>
   <servlet>
     <description>文件上传</description>
-    <display-name>Upload</display-name>
-    <servlet-name>Upload</servlet-name>
-    <servlet-class>com.zzxy.NetDict.API.Upload</servlet-class>
+    <display-name>FileUpload</display-name>
+    <servlet-name>FileUpload</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.FileUpload</servlet-class>
+    <init-param>
+      <param-name>filepath</param-name>
+      <param-value>uploadFile</param-value>
+    </init-param>
+    <init-param>
+      <param-name>temppath</param-name>
+      <param-value>temp</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Upload</servlet-name>
-    <url-pattern>/Upload</url-pattern>
+    <servlet-name>FileUpload</servlet-name>
+    <url-pattern>/FileUpload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FileFeatureCheck</display-name>
+    <servlet-name>FileFeatureCheck</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.FileFeatureCheck</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileFeatureCheck</servlet-name>
+    <url-pattern>/FileFeatureCheck</url-pattern>
   </servlet-mapping>
 </web-app>
