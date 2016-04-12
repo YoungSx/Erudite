@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="sources/style/common/style.css">
 <!-- Resource style -->
 <script src="WebPages/sources/script/common/modernizr.js"></script><!-- Modernizr -->
-<meta name="keywords" content="ååºå¼,ç½ç«æ¡æ¶,å¨ç»èå,å¨å±ç½ç«,ç½ç«æºç " />
-<meta name="description" content="ä¸æ¬¾jQueryååºå¼å¨å±å¨ç»èåç½ç«æ¡æ¶ï¼éè¿ç¹å»é¡µé¢ä¾§è¾¹èåï¼å¯¹åºçé¡µé¢å è½½æ¶ä¼´éçæ»å¨è¿æ¸¡å¨ç»ï¼è¿å¸¦è¿åº¦æ¡ææçãå½ç¶é¡µé¢çå è½½æ¯Ajaxé©±å¨çï¼æ´ä¸ªå è½½è¿æ¸¡è¿ç¨éå¸¸æµçï¼éå¸¸å¥½çç¨æ·ä½éªã">
+<meta name="keywords" content="响应式,网站框架,动画菜单,全屏网站,网站源码" />
+<meta name="description" content="一款jQuery响应式全屏动画菜单网站框架，通过点击页面侧边菜单，对应的页面加载时伴随着滑动过渡动画，还带进度条效果的。当然页面的加载是Ajax驱动的，整个加载过渡过程非常流畅，非常好的用户体验。">
 </head>
 <body>
 <nav class="cd-side-navigation">
@@ -48,10 +48,11 @@
       </svg> </svg> Contact </a> </li>
     <li> <a href="#0" data-menu="upload"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
       <g transform="translate(0, 0)">
-        <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 " stroke-linejoin="miter"></polyline>
-        <rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
-        <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17" stroke-linejoin="miter"></line>
-        <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17" stroke-linejoin="miter"></line>
+        <polyline points=" 19,7 12,0 5,7 " data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" stroke-linejoin="miter"></polyline>
+        <line y1="10" y2="20" x2="1" x1="1" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
+        <line y1="10" y2="20" x1="23" x2="23" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
+        <line x1="1" y1="20" y2="20" x2="23" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
+        <line y2="20" x1="12" y1="0" stroke-miterlimit="10" x2="12" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
       </g>
     </svg> </svg> upload </a> </li>
   </ul>

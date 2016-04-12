@@ -81,7 +81,7 @@ jQuery(document).ready(function($){
 			//create a new section element and insert it into the DOM
 			var section = $('<section class="cd-section overflow-hidden '+newSection+'"></section>').appendTo(mainContent);
 			//load the new content from the proper html file
-			section.load(newSection+'.html .cd-section > *', function(event){
+			section.load(newSection+'.jsp .cd-section > *', function(event){
 				//finish up the animation and then make the new section visible
 				var scaleMax = loadingBar.data('scale');
 				
@@ -98,7 +98,7 @@ jQuery(document).ready(function($){
 						resetAfterAnimation(section);
 					}
 
-					var url = newSection+'.html';
+					var url = newSection+'.jsp';
 
 					if(url!=window.location && bool){
 				        //add the new page to the window.history
