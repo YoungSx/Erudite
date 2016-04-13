@@ -11,8 +11,6 @@
     <!-- Resource style -->
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
     <script src="sources/script/upload/upload.js"></script>
-    <meta name="keywords" content="响应式,网站框架,动画菜单,全屏网站,网站源码" />
-    <meta name="description" content="一款jQuery响应式全屏动画菜单网站框架，通过点击页面侧边菜单，对应的页面加载时伴随着滑动过渡动画，还带进度条效果的。当然页面的加载是Ajax驱动的，整个加载过渡过程非常流畅，非常好的用户体验。">
 </head>
 <body>
 <nav class="cd-side-navigation">
@@ -75,7 +73,36 @@
             </div>
             <div id="dropBox"></div>
 
+
+
+            <a href="#upload-content" class="cd-scroll">Scroll Down</a>
         </header>
+        <div class="uploadDescribe" id="upload-content">
+            <form action="">
+                <div class="File1">
+                    <div id="fileLeft">
+                        <div class="descriptFileName">文件名：文件名.txt</div>
+                        <div class="uploadListName">文件分类：</div>
+                        <div class="uploadList">
+                            <select class="descriptType">
+                                <option>教育教学</option>
+                                <option>专业资料</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="fileRight">
+                        <div class="uploadListName2">文件描述：</div>
+                        <div class="uploadDescribeText">
+                         <textarea class="uploadDescribeTextarea"></textarea>
+                        </div>
+                        <div class="uploadDescribeSubmit" >
+                        <a>提交</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
         <!-- .cd-content -->
     </section>
     <!-- .cd-section -->
@@ -87,6 +114,8 @@
 <script src="sources/script/common/jquery-2.1.4.js"></script>
 <script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
+<script src="sources/script/projects/login.js"></script>
 <script src="sources/script/upload/dropUpload.js"></script>
+<script type='text/javascript' src='sources/script/common/jquery.particleground.min.js'></script>
 </body>
 </html>

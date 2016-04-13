@@ -1,6 +1,7 @@
 /**
- * Created by 0 on 2016/4/12.
+ * Created by SX on 2016/4/12.
  */
+/*
 loginButton = document.getElementById("btnLogin");
 function loginRequest(loginForm){
     var lReq=new XMLHttpRequest();
@@ -19,3 +20,4 @@ loginButton.onclick=function(){
     var result=loginRequest(loginForm);
 
 }
+*/

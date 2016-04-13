@@ -3,14 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="sources/style/common/reset.css">
-<!-- CSS reset -->
-<link rel="stylesheet" href="sources/style/common/style.css">
-<!-- Resource style -->
-<script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
-<title>jQuery响应式全屏动画菜单网站框架 - 【科e互联】</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sources/style/common/reset.css">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="sources/style/common/style.css">
+    <!-- Resource style -->
+    <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
+    <script src="sources/script/upload/upload.js"></script>
 </head>
 <body>
 <nav class="cd-side-navigation">
@@ -61,7 +61,12 @@
 <main class="cd-main">
   <section class="cd-section index visible">
     <header>
-
+      <div id="particles">
+        <div class="intro">
+          <h1>Particleground</h1>
+          <p>A jQuery plugin for snazzy background particle systems</p>
+          <a href="http://www.internetke.com/jiaoben/" target="_blank" class="btn">科e互联</a> </div>
+      </div>
     </header>
     <!-- .cd-content --> 
   </section>
@@ -69,10 +74,13 @@
 </main>
 <!-- .cd-main -->
 
-<div id="cd-loading-bar" data-scale="1" class="index"></div>
-<!-- lateral loading bar --> 
-<script src="sources/script/common/jquery-2.1.4.js"></script> 
-<script src="sources/script/common/velocity.min.js"></script> 
+<div id="cd-loading-bar" data-scale="1" class="upload"></div>
+<!-- lateral loading bar -->
+<script src="sources/script/common/jquery-2.1.4.js"></script>
+<script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
+<script src="sources/script/projects/login.js"></script>
+<script src="sources/script/upload/dropUpload.js"></script>
+<script type='text/javascript' src='sources/script/common/jquery.particleground.min.js'></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function($){
 	//set some variables
 	var isAnimating = false,
@@ -32,7 +33,7 @@ jQuery(document).ready(function($){
 		    */
 	      	var newPageArray = location.pathname.split('/'),
 	        //this is the url of the page to be loaded 
-	        newPage = newPageArray[newPageArray.length - 1].replace('.html', '');
+	        newPage = newPageArray[newPageArray.length - 1].replace('.jsp', '');
 	      	if( !isAnimating ) triggerAnimation(newPage, false);
 	    }
 	    firstLoad = true;
@@ -84,6 +85,11 @@ jQuery(document).ready(function($){
 			section.load(newSection+'.jsp .cd-section > *', function(event){
 				//finish up the animation and then make the new section visible
 				var scaleMax = loadingBar.data('scale');
+
+				if(newSection=="index"){
+					showAnim();
+				}
+
 				
 				loadingBar.velocity('stop').velocity({
 					scaleY: scaleMax
@@ -138,3 +144,14 @@ jQuery(document).ready(function($){
 		}, 1);
 	}
 });
+
+function showAnim(){
+	$('#particles').particleground({
+		dotColor: '#5cbdaa',
+		lineColor: '#5cbdaa'
+	});
+	$('.intro').css({
+		'margin-top': -($('.intro').height() / 2)
+	});
+}
+$(document).ready(showAnim);

@@ -1,12 +1,14 @@
 /**
  * Created by shang on 2016/3/26.
  */
-var formElement=document.getElementById("formUpload");
-formElement.action="recev.php";
-var uploadForm = new FormData(formElement);
+var formElement;
+var uploadForm;
 
 function readySubmit(files){
-
+	formElement=document.getElementById("formUpload");
+	uploadForm = new FormData(formElement);
+	
+	/*
     descriptHTML="<form>";
     for(var i=0;i<files.length;i++){
         descriptHTML+="<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType'>"+
@@ -19,13 +21,10 @@ function readySubmit(files){
             "<textarea name='descriptText"+ i +"' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>";
     }
     descriptHTML+="<input type='submit' value='立即上传'></form>";
-    document.getElementById("main_ui").innerHTML+=descriptHTML;
-    submitFile(event.dataTransfer.files);
-    /*
-     uploadForm.append("descript0",arrar(
-     descriptText,fileType
-     ));
-     */
+    document.body.innerHTML+=descriptHTML;
+    */
+    submitFile(files);
+
 }
 function submitFile(files){
 
@@ -34,12 +33,7 @@ function submitFile(files){
             uploadForm.append("file"+i,files[i]);
             console.log("file"+i);
         }
-    /*
-    console.log("files to upload later on :");
-    console.log(files);
-    console.log("form to submit later on :");
-    console.log(uploadForm);
-    */
+
     var oReq=new XMLHttpRequest();
     oReq.addEventListener("progress",uploadProgress,false);
     oReq.addEventListener("load",uploadComplete,false);
@@ -51,10 +45,10 @@ function submitFile(files){
     oReq.send(uploadForm);
 }
 function uploadProgress(event){
-    progressNumberBar = document.getElementById("progressNumberBar");
+    //progressNumberBar = document.getElementById("progressNumberBar");
     if(event.lengthComputable){
-        progressNumberBar.max=event.total;
-        progressNumberBar.value=event.loaded;
+        //progressNumberBar.max=event.total;
+        //progressNumberBar.value=event.loaded;
         var percentComplete = Math.round(event.loaded * 100 /event.total);
         console.log(percentComplete);
     }else   console.log("unable to compute");

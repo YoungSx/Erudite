@@ -3,15 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="sources/style/common/reset.css">
-<!-- CSS reset -->
-<link rel="stylesheet" href="sources/style/common/style.css">
-<!-- Resource style -->
-<script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
-<meta name="keywords" content="响应式,网站框架,动画菜单,全屏网站,网站源码" />
-<meta name="description" content="一款jQuery响应式全屏动画菜单网站框架，通过点击页面侧边菜单，对应的页面加载时伴随着滑动过渡动画，还带进度条效果的。当然页面的加载是Ajax驱动的，整个加载过渡过程非常流畅，非常好的用户体验。">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sources/style/common/reset.css">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="sources/style/common/style.css">
+    <!-- Resource style -->
+    <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
+    <script src="sources/script/upload/upload.js"></script>
 </head>
 <body>
 <nav class="cd-side-navigation">
@@ -77,11 +76,13 @@
 </main>
 <!-- .cd-main -->
 
-<div id="cd-loading-bar" data-scale="1" class="contact"></div>
-<!-- lateral loading bar --> 
-<script src="sources/script/common/jquery-2.1.4.js"></script> 
-<script src="sources/script/common/velocity.min.js"></script> 
-<script src="sources/script/common/main.js"></script>
-<!-- Resource jQuery -->
+<div id="cd-loading-bar" data-scale="1" class="upload"></div>
+<!-- lateral loading bar -->
+<script src="sources/script/common/jquery-2.1.4.js"></script>
+<script src="sources/script/common/velocity.min.js"></script>
+<script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
+<script src="sources/script/projects/login.js"></script>
+<script src="sources/script/upload/dropUpload.js"></script>
+<script type='text/javascript' src='sources/script/common/jquery.particleground.min.js'></script>
 </body>
 </html>
