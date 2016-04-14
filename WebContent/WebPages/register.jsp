@@ -66,11 +66,11 @@
             <div class="slogan">开启新的知识旅行</div>
             <div class="register">
                 <form id="registerForm">
-                    <input class="username" id="username" placeholder="用户名" type="text"><br>
-                    <input class="nickname" id="nickname" placeholder="昵称" type="text"><br>
-                    <input class="mailbox" id="mailbox" placeholder="邮箱" type="text"><br>
-                    <input class="password" id="password" placeholder="密码" type="password"><br>
-                    <input class="confirmPassword" id="confirmPassword" placeholder="确认密码" type="password"><br>
+                    <input class="registerInput" id="username" placeholder="用户名" type="text"><br>
+                    <input class="registerInput" id="nickname" placeholder="昵称" type="text"><br>
+                    <input class="registerInput" id="mailbox" placeholder="邮箱" type="text"><br>
+                    <input class="registerInput" id="password" placeholder="密码" type="password"><br>
+                    <input class="registerInput" id="confirmPassword" placeholder="确认密码" type="password"><br>
                     <a class="btnRegister" id="btnRegister">注册</a>
                 </form>
             </div>
