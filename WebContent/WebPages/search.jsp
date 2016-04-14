@@ -3,14 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="sources/style/common/reset.css">
-    <!-- CSS reset -->
-    <link rel="stylesheet" href="sources/style/common/style.css">
-    <!-- Resource style -->
-    <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
-    <script src="sources/script/upload/upload.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="sources/style/common/reset.css">
+  <!-- CSS reset -->
+  <link rel="stylesheet" href="sources/style/common/style.css">
+  <!-- Resource style -->
+  <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
+  <script src="sources/script/upload/upload.js"></script>
 </head>
 <body>
 <nav class="cd-side-navigation">
@@ -39,10 +39,8 @@
       </svg> 个人 </a> </li>
     <li> <a href="#0" class="selected" data-menu="search"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
       <g transform="translate(0, 0)">
-        <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 " stroke-linejoin="miter"></polyline>
-        <rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
-        <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17" stroke-linejoin="miter"></line>
-        <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17" stroke-linejoin="miter"></line>
+        <circle cx="10" cy="10" r="9" data-color="color-2" stroke="#4a5261" stroke-width="2" fill="none" />
+        <line y1="23" y2="18" x2="17" x1="22" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
       </g>
       </svg> </svg> 搜索 </a> </li>
     <li> <a href="#0" data-menu="upload"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
@@ -60,17 +58,23 @@
 <main class="cd-main">
   <section class="cd-section search visible">
     <header>
-      <div class="cd-title">
-        <h2>search</h2>
-        <span>Some text here</span> </div>
-      <a href="#search-content" class="cd-scroll">Scroll Down</a> </header>
-    <div class="cd-content" id="search-content">
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
+    <div class="slogan">发现最想要的知识</div>
+      <div id="search" >
+        <form action="">
+            <select name="searchType" id="searchType">
+                <option value="multiple">综合</option>
+                <option value="document">文档</option>
+                <option value="pictrue">图片</option>
+                <option value="video">视频</option>
+                <option value="audio">音频</option>
+            </select>
+            <input type="text" placeholder="在此键入搜索" name="searchBox" id="searchBox">
+            <input type="submit" value=" " id="searchButton">
+        </form>
     </div>
-    <!-- .cd-content --> 
+ </header>
+
+
   </section>
   <!-- .cd-section --> 
 </main>
