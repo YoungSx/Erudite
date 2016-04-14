@@ -88,6 +88,8 @@ jQuery(document).ready(function($){
 
 				if(newSection=="index"){
 					showAnim();
+				}else if(newSection=="upload"){
+					dropUpload();
 				}
 
 				
