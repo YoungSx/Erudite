@@ -113,6 +113,7 @@
      */
     function draw() {
       if (!canvasSupport) { return; }
+      console.log(1);
 
       winW = $(window).width();
       winH = $(window).height();
@@ -227,6 +228,7 @@
      * Draw particle 
      */
     Particle.prototype.draw = function() {
+
       // Draw circle
       ctx.beginPath();
       ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, options.particleRadius / 2, 0, Math.PI * 2, true); 

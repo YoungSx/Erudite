@@ -148,6 +148,7 @@ jQuery(document).ready(function($){
 });
 
 function showAnim(){
+	return 0;
 	$('#particles').particleground({
 		dotColor: '#5cbdaa',
 		lineColor: '#5cbdaa'
