@@ -60,10 +60,68 @@
 
 <main class="cd-main">
   <section class="cd-section index visible">
-    <header>
-      <div id="particles">
+    <header> 
+      <div class="slogan">探索全世界的智慧</div>
+      <div class="classification">
+        <a href="#education" class="btn">教育教学</a>
+        <a href="#professional" class="btn">专业资料</a>
+        <a href="#utility" class="btn">实用文档</a>
+        <a href="#examination" class="btn">资格考试</a>
+        <a href="#leisureife" class="btn">生活休闲</a>
       </div>
+      <!-- <div id="particles"> </div> -->
     </header>
+    <div class="detailed" id="education">
+      <div class="detailedList"><a href="#">幼儿教育</a></div>
+      <div class="detailedList"><a href="#">小学教育</a></div>
+      <div class="detailedList"><a href="#">初中教育</a></div>
+      <div class="detailedList"><a href="#">高中教育</a></div>
+      <div class="detailedList"><a href="#">职业教育</a></div>
+      <div class="detailedList"><a href="#">成人教育</a></div>
+      <div class="detailedList"><a href="#">文库题库</a></div>
+      <div class="detailedList"><a href="#">高等教育</a></div>
+    </div>
+    <div class="detailed" id="professional">
+      <div class="detailedList"><a href="#">人文社科</a></div>
+      <div class="detailedList"><a href="#">经管营销</a></div>
+      <div class="detailedList"><a href="#">工程科技</a></div>
+      <div class="detailedList"><a href="#">IT/计算机</a></div>
+      <div class="detailedList"><a href="#">自然科学</a></div>
+      <div class="detailedList"><a href="#">医药卫生</a></div>
+      <div class="detailedList"><a href="#">农林渔牧</a></div>
+    </div>
+    <div class="detailed" id="utility">
+      <div class="detailedList"><a href="#">求职/职场</a></div>
+      <div class="detailedList"><a href="#">计划/方案</a></div>
+      <div class="detailedList"><a href="#">总结/汇报</a></div>
+      <div class="detailedList"><a href="#">党团工作</a></div>
+      <div class="detailedList"><a href="#">工作范文</a></div>
+      <div class="detailedList"><a href="#">表格/模板</a></div>
+    </div>
+    <div class="detailed" id="examination">
+      <div class="detailedList"><a href="#">财会类</a></div>
+      <div class="detailedList"><a href="#">公务员类</a></div>
+      <div class="detailedList"><a href="#">学历类</a></div>
+      <div class="detailedList"><a href="#">建筑类</a></div>
+      <div class="detailedList"><a href="#">外语类</a></div>
+      <div class="detailedList"><a href="#">资格类</a></div>
+      <div class="detailedList"><a href="#">外贸类</a></div>
+      <div class="detailedList"><a href="#">医药类</a></div>
+      <div class="detailedList"><a href="#">计算机类</a></div>
+    </div>
+        <div class="detailed" id="leisureife">
+      <div class="detailedList"><a href="#">饮食</a></div>
+      <div class="detailedList"><a href="#">游戏</a></div>
+      <div class="detailedList"><a href="#">体育/运动</a></div>
+      <div class="detailedList"><a href="#">音乐</a></div>
+      <div class="detailedList"><a href="#">旅游购物</a></div>
+      <div class="detailedList"><a href="#">娱乐时尚</a></div>
+      <div class="detailedList"><a href="#">美容化妆</a></div>
+      <div class="detailedList"><a href="#">影视/动漫</a></div>
+      <div class="detailedList"><a href="#">保健养生</a></div>
+      <div class="detailedList"><a href="#">随笔</a></div>
+      <div class="detailedList"><a href="#">幽默滑稽</a></div>
+    </div>
     <!-- .cd-content --> 
   </section>
   <!-- .cd-section --> 
@@ -77,6 +135,6 @@
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
 <script src="sources/script/person/login.js"></script>
 <script src="sources/script/upload/dropUpload.js"></script>
-<script type='text/javascript' src='sources/script/common/jquery.particleground.min.js'></script>
+<script type='text/javascript' src='sources/script/common/jquery.particleground.js'></script>
 </body>
 </html>
