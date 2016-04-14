@@ -1,6 +1,6 @@
 /**
  * Created by shang on 2016/4/2.
- */dropUpload();
+ */
  function dropUpload(){
 
     var header = document.getElementById("header");
@@ -51,23 +51,3 @@
         readySubmit(event.dataTransfer.files);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
