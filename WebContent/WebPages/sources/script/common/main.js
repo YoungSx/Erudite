@@ -86,10 +86,22 @@ jQuery(document).ready(function($){
 				//finish up the animation and then make the new section visible
 				var scaleMax = loadingBar.data('scale');
 
-				if(newSection=="index"){
-					showAnim();
-				}else if(newSection=="upload"){
-					dropUpload();
+//				if(newSection=="index"){
+//					showAnim();
+//				}else if(newSection=="upload"){
+//					dropUpload();
+//				}
+				switch(newSection){
+					case "index": 
+						showAnim();
+						break;
+					case "upload":
+						dropUpload();
+						break;
+					case "person":
+						login();
+						break;
+						
 				}
 
 				
