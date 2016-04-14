@@ -64,8 +64,8 @@
         <div class="slogan">创造属于你的知识</div>
         <div class="login">
           <form id="loginForm">
-            <input class="loginInput" id="account" placeholder="用户名" type="text"><br>
-            <input class="loginInput" id="pass" placeholder="密码" type="password"><br>
+            <input class="loginInput" name="account" id="username" placeholder="用户名" type="text"><br>
+            <input class="loginInput" name="pass" id="password" placeholder="密码" type="password"><br>
             <a class="btnLogin" id="btnLogin">登陆</a>
             <div class="btnRegister" id="btnRegister">
               <a href="register.jsp" class="selected" data-menu="person">注册</a>
