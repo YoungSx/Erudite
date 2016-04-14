@@ -63,12 +63,12 @@
         <header>
 
 
-            <div class="slogan">创qweqweqw你的知识</div>
-            <div class="login">
-                <form id="loginForm">
+            <div class="slogan">开启新的知识旅行</div>
+            <div class="register">
+                <form id="registerForm">
                     <input class="username" id="username" placeholder="用户名" type="text"><br>
                     <input class="password" id="password" placeholder="密码" type="password"><br>
-                    <a href="../xor1/projects.html" class="selected" data-menu="projects">denglu </a>
+                    <a href="../WebPages/projects.jsp" class="selected" data-menu="projects">denglu </a>
                     <a class="btnRegister" id="btnRegister">注册</a>
                 </form>
             </div>
