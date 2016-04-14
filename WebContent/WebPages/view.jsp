@@ -47,11 +47,8 @@
       </svg> </svg> 搜索 </a> </li>
     <li> <a href="#0" data-menu="upload"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
       <g transform="translate(0, 0)">
-        <polyline points=" 19,7 12,0 5,7 " data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" stroke-linejoin="miter"></polyline>
-        <line y1="10" y2="20" x2="1" x1="1" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
-        <line y1="10" y2="20" x1="23" x2="23" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
-        <line x1="1" y1="20" y2="20" x2="23" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
-        <line y2="20" x1="12" y1="0" stroke-miterlimit="10" x2="12" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
+     <circle cx="10" cy="10" r="9" data-color="color-2" stroke="#4a5261" stroke-width="2" fill="none" />
+        <line y1="23" y2="18" x2="17" x1="22" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
       </g>
     </svg> </svg> 上传 </a> </li>
   </ul>
@@ -61,16 +58,82 @@
 <main class="cd-main">
   <section class="cd-section view visible">
     <header>
-      <div class="cd-title">
-        <h2>view</h2>
-        <span>Some text here</span> </div>
-      <a href="#view-content" class="cd-scroll">Scroll Down</a> </header>
-    <div class="cd-content" id="view-content">
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo veritatis ea deserunt aliquam blanditiis, voluptas optio, voluptate ut accusamus veniam numquam, porro! Cum minima a molestiae, similique voluptate, perferendis vel iusto quam suscipit delectus dolore ducimus possimus illo molestias voluptas labore optio consequuntur sapiente pariatur libero nam temporibus. Laudantium! </p>
+    <div class="slogan">看最新的热度排行</div>
+    <div class="hot">
+      <div class="top" id="top1">
+        <a><li style="text-align: center;">总排行</li></a> 
+        <a><li>1. 文件名.txt</li></a> 
+        <a><li>2. 文件名.mp3</li></a> 
+        <a><li>3. 文件名.mp4</li></a> 
+        <a><li>4. 文件名.jsp</li></a> 
+        <a><li>5. 文件名.heml</li></a> 
+        <a><li>6. 文件名.pptx</li></a> 
+        <a><li>7. 文件名.pdf</li></a> 
+        <a><li>8. 文件名.rm</li></a> 
+        <a><li>9. 文件名.png</li></a> 
+      </div>
+      <div class="top">
+        <a><li style="text-align: center;">总排行</li></a> 
+        <a><li>1. 文件名.txt</li></a> 
+        <a><li>2. 文件名.mp3</li></a> 
+        <a><li>3. 文件名.mp4</li></a> 
+        <a><li>4. 文件名.jsp</li></a> 
+        <a><li>5. 文件名.heml</li></a> 
+        <a><li>6. 文件名.pptx</li></a> 
+        <a><li>7. 文件名.pdf</li></a> 
+        <a><li>8. 文件名.rm</li></a> 
+        <a><li>9. 文件名.png</li></a> 
+      </div>
+      <div class="top">
+        <a><li style="text-align: center;">总排行</li></a> 
+        <a><li>1. 文件名.txt</li></a> 
+        <a><li>2. 文件名.mp3</li></a> 
+        <a><li>3. 文件名.mp4</li></a> 
+        <a><li>4. 文件名.jsp</li></a> 
+        <a><li>5. 文件名.heml</li></a> 
+        <a><li>6. 文件名.pptx</li></a> 
+        <a><li>7. 文件名.pdf</li></a> 
+        <a><li>8. 文件名.rm</li></a> 
+        <a><li>9. 文件名.png</li></a> 
+      </div>
+      <div class="top">
+        <a><li style="text-align: center;">总排行</li></a> 
+        <a><li>1. 文件名.txt</li></a> 
+        <a><li>2. 文件名.mp3</li></a> 
+        <a><li>3. 文件名.mp4</li></a> 
+        <a><li>4. 文件名.jsp</li></a> 
+        <a><li>5. 文件名.heml</li></a> 
+        <a><li>6. 文件名.pptx</li></a> 
+        <a><li>7. 文件名.pdf</li></a> 
+        <a><li>8. 文件名.rm</li></a> 
+        <a><li>9. 文件名.png</li></a> 
+      </div>
+        <div class="top">
+        <a><li style="text-align: center;">总排行</li></a> 
+        <a><li>1. 文件名.txt</li></a> 
+        <a><li>2. 文件名.mp3</li></a> 
+        <a><li>3. 文件名.mp4</li></a> 
+        <a><li>4. 文件名.jsp</li></a> 
+        <a><li>5. 文件名.heml</li></a> 
+        <a><li>6. 文件名.pptx</li></a> 
+        <a><li>7. 文件名.pdf</li></a> 
+        <a><li>8. 文件名.rm</li></a> 
+        <a><li>9. 文件名.png</li></a> 
+      </div>
+      <div class="top">
+        <a><li style="text-align: center;">总排行</li></a> 
+        <a><li>1. 文件名.txt</li></a> 
+        <a><li>2. 文件名.mp3</li></a> 
+        <a><li>3. 文件名.mp4</li></a> 
+        <a><li>4. 文件名.jsp</li></a> 
+        <a><li>5. 文件名.heml</li></a> 
+        <a><li>6. 文件名.pptx</li></a> 
+        <a><li>7. 文件名.pdf</li></a> 
+        <a><li>8. 文件名.rm</li></a> 
+        <a><li>9. 文件名.png</li></a> 
+      </div>
     </div>
+    </header>
     <!-- .cd-content --> 
   </section>
   <!-- .cd-section --> 
