@@ -439,11 +439,37 @@ Navigation
     left: 90px;
   }
 }
+.register{
+  margin-top: 4%;
+  margin-left: 35%;
+}
 .login{
   margin-top: 6%;
   margin-left: 35%;
 }
 .username{
+  border:1px solid #ffffff;
+  -moz-border-radius:25px;
+  height: 40px;
+  width: 300px;
+  color: white;
+  padding-left: 10px;
+  background-color: #343943;
+  font-size: 16px;
+}
+.nickname{
+   margin-top: 3%;
+  border:1px solid #ffffff;
+  -moz-border-radius:25px;
+  height: 40px;
+  width: 300px;
+  color: white;
+  padding-left: 10px;
+  background-color: #343943;
+  font-size: 16px;
+}
+.mailbox{
+   margin-top: 3%;
   border:1px solid #ffffff;
   -moz-border-radius:25px;
   height: 40px;
@@ -464,9 +490,20 @@ Navigation
   background-color: #343943;
   font-size: 16px;
 }
+.confirmPassword{
+  margin-top: 3%;
+  border:1px solid #ffffff;
+  -moz-border-radius:25px;
+  height: 40px;
+  width: 300px;
+  color: white;
+  padding-left: 10px;
+  background-color: #343943;
+  font-size: 16px;
+}
 .btnLogin{
   display: block;
-  padding-top: 9px;
+  padding-top: 13px;
   margin-top: 3%;
   border-radius: 1px ;
   -moz-border-radius:25px;
@@ -481,7 +518,7 @@ Navigation
 }
 .btnRegister{
   display: block;
-  padding-top: 9px;
+  padding-top: 13px;
   margin-top: 3%;
   border-radius: 1px ;
   -moz-border-radius:25px;
@@ -494,13 +531,18 @@ Navigation
   font-size: 16px;
   cursor:pointer;
 }
+.btnRegister a{
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
 .btnLogin:active{
   background-color: #004070;
 }
 .btnRegister:active{
   background-color: #556677;
 }
-.username:focus,.password:focus{
+.username:focus,.password:focus,.confirmPassword:focus，.mailbox:focus{
   background-color: white;
   color: #000000;
 }
