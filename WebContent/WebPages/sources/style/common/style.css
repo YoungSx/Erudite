@@ -817,3 +817,23 @@ padding-top: 5px;
 .fileName{
 padding-top: 5px;
 }
+.fileView{
+   float: left;
+  background-color: #FFFFFF;
+  width: 70%;
+  margin: 50px;
+  padding: 30px;
+}
+.viewWinows{
+padding: 20px;
+line-height: 20px;
+margin-right: 200px;
+}
+.relation{
+  float: left;
+  background-color: #FFFFFF;
+  width: 19%;
+  margin-top: 50px;
+  padding: 30px;
+  height: 100%;
+}
