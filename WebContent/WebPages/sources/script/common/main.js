@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
 			triggerAnimation(sectionTarget, true);
 		}
 
-		firstLoad = true;
+		firstLoad = false;
 	});
 
 	//detect the 'popstate' event - e.g. user clicking the back button
@@ -36,15 +36,44 @@ jQuery(document).ready(function($){
 	        newPage = newPageArray[newPageArray.length - 1].replace('.jsp', '');
 	      	if( !isAnimating ) triggerAnimation(newPage, false);
 	    }
-	    firstLoad = true;
+	    firstLoad = false;
 	});
 
   	//scroll to content if user clicks the .cd-scroll icon
-	mainContent.on('click', '.cd-scroll', function(event){
+	mainContent.on(
+		'click', '.cd-scroll',function(event){
 		event.preventDefault();
 		var scrollId = $(this.hash);
 		$(scrollId).velocity('scroll', { container: $(".cd-section") }, 200);
 	});
+
+
+	mainContent.on(
+		'click', '.btn',function(event){
+		event.preventDefault();
+		var scrollId = $(this.hash);
+		$(scrollId).velocity('scroll', { container: $(".cd-section") }, 200);
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	//start animation
 	function triggerAnimation(newSection, bool) {
@@ -58,6 +87,16 @@ jQuery(document).ready(function($){
 		//load new content
 		loadNewContent(newSection, bool);
 	}
+
+
+
+
+
+
+
+
+
+
 
 	function initializeLoadingBar(section) {
 		var	selectedItem =  dashboard.find('.selected'),
