@@ -61,16 +61,16 @@
     <header> 
       <div class="slogan">探索全世界的智慧</div>
       <div class="classification">
-        <a href="#education" class="btn">教育教学</a>
+        <a target="_self" href="#education" class="btn">教育教学</a>
         <a href="#professional" class="btn">专业资料</a>
         <a href="#utility" class="btn">实用文档</a>
         <a href="#examination" class="btn">资格考试</a>
         <a href="#leisureife" class="btn">生活休闲</a>
       </div>
-      <!-- <div id="particles"> </div> -->
+      <div id="particles"> </div>
     </header>
     <div class="detailed" id="education">
-      <div class="detailedList"><a href="#">幼儿教育</a></div>
+      <div class="detailedList"><a target="_self" href="#">幼儿教育</a></div>
       <div class="detailedList"><a href="#">小学教育</a></div>
       <div class="detailedList"><a href="#">初中教育</a></div>
       <div class="detailedList"><a href="#">高中教育</a></div>
