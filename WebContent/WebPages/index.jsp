@@ -56,13 +56,16 @@
   </ul>
 </nav>
 <!-- .cd-side-navigation -->
+<a href="#top"><div class="barTop"></div></a>
+<main class="cd-main" >
 
-<main class="cd-main">
   <section class="cd-section index visible">
+  <a id="top"></a>
     <header> 
+
       <div class="slogan">探索全世界的智慧</div>
       <div class="classification">
-        <a  href="#education" class="btn">教育教学</a>
+        <a href="#education" class="btn">教育教学</a>
         <a href="#professional" class="btn">专业资料</a>
         <a href="#utility" class="btn">实用文档</a>
         <a href="#examination" class="btn">资格考试</a>
