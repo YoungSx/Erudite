@@ -790,3 +790,30 @@ border-bottom: 1px solid #A469CA;
     display: block;
     color: #FFFFFF;
 }
+.result{
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  width: 80%;
+  margin: 10%;
+  padding: 30px;
+}
+.resultShow:first-child{
+  border-top: 1px solid #999999;
+}
+.resultShow{
+  height: 100px;
+  padding: 20px;
+  border-bottom: 1px solid #999999;
+}
+.fileIcon{
+  height: 50px;
+  width: 50px;
+  background-color: #000000;
+  float: left;
+}
+.fileDescribe{
+padding-top: 5px;
+}
+.fileName{
+padding-top: 5px;
+}
