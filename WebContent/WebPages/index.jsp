@@ -11,6 +11,7 @@
     <!-- Resource style -->
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
     <script src="sources/script/upload/upload.js"></script>
+
 </head>
 <body>
 <nav class="cd-side-navigation">
@@ -55,13 +56,16 @@
   </ul>
 </nav>
 <!-- .cd-side-navigation -->
+<a href="#top"><div class="barTop"></div></a>
+<main class="cd-main" >
 
-<main class="cd-main">
   <section class="cd-section index visible">
+  <a id="top"></a>
     <header> 
+
       <div class="slogan">探索全世界的智慧</div>
       <div class="classification">
-        <a target="_self" href="#education" class="btn">教育教学</a>
+        <a href="#education" class="btn">教育教学</a>
         <a href="#professional" class="btn">专业资料</a>
         <a href="#utility" class="btn">实用文档</a>
         <a href="#examination" class="btn">资格考试</a>
@@ -69,8 +73,11 @@
       </div>
       <div id="particles"> </div>
     </header>
+
+
     <div class="detailed" id="education">
-      <div class="detailedList"><a target="_self" href="#">幼儿教育</a></div>
+    <div id="p2">教育教学</div>
+      <div class="detailedList"><a href="#">幼儿教育</a></div>
       <div class="detailedList"><a href="#">小学教育</a></div>
       <div class="detailedList"><a href="#">初中教育</a></div>
       <div class="detailedList"><a href="#">高中教育</a></div>
@@ -80,6 +87,7 @@
       <div class="detailedList"><a href="#">高等教育</a></div>
     </div>
     <div class="detailed" id="professional">
+    <div id="p2">专业资料</div>
       <div class="detailedList"><a href="#">人文社科</a></div>
       <div class="detailedList"><a href="#">经管营销</a></div>
       <div class="detailedList"><a href="#">工程科技</a></div>
@@ -89,6 +97,7 @@
       <div class="detailedList"><a href="#">农林渔牧</a></div>
     </div>
     <div class="detailed" id="utility">
+    <div id="p2">实用文档</div>
       <div class="detailedList"><a href="#">求职/职场</a></div>
       <div class="detailedList"><a href="#">计划/方案</a></div>
       <div class="detailedList"><a href="#">总结/汇报</a></div>
@@ -97,6 +106,7 @@
       <div class="detailedList"><a href="#">表格/模板</a></div>
     </div>
     <div class="detailed" id="examination">
+    <div id="p2">资格考试</div>
       <div class="detailedList"><a href="#">财会类</a></div>
       <div class="detailedList"><a href="#">公务员类</a></div>
       <div class="detailedList"><a href="#">学历类</a></div>
@@ -108,6 +118,7 @@
       <div class="detailedList"><a href="#">计算机类</a></div>
     </div>
         <div class="detailed" id="leisureife">
+        <div id="p3">教育教学</div>
       <div class="detailedList"><a href="#">饮食</a></div>
       <div class="detailedList"><a href="#">游戏</a></div>
       <div class="detailedList"><a href="#">体育/运动</a></div>
