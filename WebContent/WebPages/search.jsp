@@ -60,7 +60,7 @@
     <header>
     <div class="slogan">发现最想要的知识</div>
       <div id="search" >
-        <form action="">
+        <form action="result.jsp">
             <select name="searchType" id="searchType">
                 <option value="multiple">综合</option>
                 <option value="document">文档</option>
