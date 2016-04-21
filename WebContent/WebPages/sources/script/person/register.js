@@ -18,7 +18,7 @@ function register(){
 	}
 	function registerRequest(form,url,method){
 	    var lReq=new XMLHttpRequest();
-	    lReq.open(method,form);
+	    lReq.open(method,url);
 	    lReq.send(form);
 	    return lReq.responseText;
 	}

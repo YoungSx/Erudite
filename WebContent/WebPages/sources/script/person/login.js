@@ -7,7 +7,7 @@ function login(){
 	function loginRequest(form,url,method){
 	    var lReq=new XMLHttpRequest();
 	    //lReq.open("POST","http://localhost:8080/Erudite/login");//目标文件
-	    lReq.open(method,form);
+	    lReq.open(method,url);
 	    lReq.send(form);
 	    return lReq.responseText;
 	}
@@ -22,6 +22,7 @@ function login(){
 
 	    var resObj=eval('['+strJSON+']');
 	    if(typeof(resObj == 'object')){
+	    		console.log(resObj);
 				if (resObj.suc==1 && resObj.err == 0) {//登陆成功
 					User.account = resObj.xxx.account;//JSON格式暂时不清楚
 					User.nickname= resObj.xxx.nickname;
