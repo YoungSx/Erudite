@@ -8,21 +8,31 @@ function readySubmit(files){
 	formElement=document.getElementById("formUpload");
 	uploadForm = new FormData(formElement);
 	
-	/*
-    descriptHTML="<form>";
+    descriptHTML="<div class='uploadDescribe' id='upload-content'><form action=''>;
     for(var i=0;i<files.length;i++){
-        descriptHTML+="<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType'>"+
+        descriptHTML+="<div class='File"+ i +"'><div class='fileLeft'>"+
+        	"<div class='descriptFileName'>文件名："+ files.name +"</div>"+//name不对
+        	"<div class='uploadListName'>文件分类：</div>"+
+        	"<div class='uploadList'>"+
+        	"<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType'>"+
             "<option value='教育频道'>教育频道</option>"+
             "<option value='专业资料'>专业资料</option>"+
             "<option value='实用文档'>实用文档</option>"+
             "<option value='资格考试'>资格考试</option>"+
             "<option value='生活休闲'>生活休闲</option>"+
             "</select>"+
-            "<textarea name='descriptText"+ i +"' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>";
+            "</div></div>"+
+            "<div id='fileRight'><div class='uploadListName2'>文件描述：</div>"+
+            "<div class='uploadDescribeText'>"+
+            "<textarea name='descriptText"+ i +"' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>"+
+            "</div>"+
+            "</div></div>";
     }
-    descriptHTML+="<input type='submit' value='立即上传'></form>";
-    document.body.innerHTML+=descriptHTML;
-    */
+    descriptHTML+="<div class='uploadDescribeSubmit' > <a>提交</a></div></form></div>";
+    var cdSection = document.getElementsByClassName("cd-section");
+    var tempHTML=cdSection.innerHTML;
+    cdSection.innerHTML+=descriptHTML;
+    
     submitFile(files);
 
 }
