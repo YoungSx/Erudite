@@ -76,6 +76,7 @@
 
             <a href="#upload-content" class="cd-scroll">Scroll Down</a>
         </header>
+        <!-- 
         <div class="uploadDescribe" id="upload-content">
             <form action="">
                 <div class="File1">
@@ -102,6 +103,7 @@
                 </div>
             </form>
         </div>
+         -->
         <!-- .cd-content -->
     </section>
     <!-- .cd-section -->

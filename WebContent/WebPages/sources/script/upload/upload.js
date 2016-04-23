@@ -3,15 +3,16 @@
  */
 var formElement;
 var uploadForm;
-
+var filesList;
 function readySubmit(files){
+	filesList = files;
 	formElement=document.getElementById("formUpload");
 	uploadForm = new FormData(formElement);
 	
-    descriptHTML="<div class='uploadDescribe' id='upload-content'><form action=''>;
+    descriptHTML="<div class='uploadDescribe' id='upload-content'><form action=''>";
     for(var i=0;i<files.length;i++){
         descriptHTML+="<div class='File"+ i +"'><div class='fileLeft'>"+
-        	"<div class='descriptFileName'>文件名："+ files.name +"</div>"+//name不对
+        	"<div class='descriptFileName'>文件名："+ files[i].name +"</div>"+//name不对
         	"<div class='uploadListName'>文件分类：</div>"+
         	"<div class='uploadList'>"+
         	"<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType'>"+
@@ -28,12 +29,25 @@ function readySubmit(files){
             "</div>"+
             "</div></div>";
     }
-    descriptHTML+="<div class='uploadDescribeSubmit' > <a>提交</a></div></form></div>";
-    var cdSection = document.getElementsByClassName("cd-section");
+    descriptHTML+="<div id='uploadDescribeSubmit' > <a>提交</a></div></form></div>";//uploadDescribeSubmit以前是class
+    var cdSection = document.getElementsByClassName("cd-section")[0];
     var tempHTML=cdSection.innerHTML;
     cdSection.innerHTML+=descriptHTML;
     
-    submitFile(files);
+    var uploadDescribeSubmit = document.getElementById("uploadDescribeSubmit");
+    uploadDescribeSubmit.addEventListener("click", function(){
+    	console.log(filesList);
+    	debugger;
+    	for(var i=0;i<filesList.length;i++){//遍历所有文件对应的分类和描述
+            var sel=document.getElementById("descriptType"+i)
+            var descriptType=sel.options[sel.options.selectedIndex].text;//读取选择的分类
+            var descriptText=document.getElementById("descriptText"+i);//读取描述
+            
+            uploadForm.append("descript"+i,[descriptText,descriptType]);//待续
+            debugger;
+        }
+    });
+    //submitFile(files);
 
 }
 function submitFile(files){
