@@ -5,6 +5,7 @@ function register(){
 	var confirmPass = document.getElementById("confirmPass");
 	var email = document.getElementById("email");
 	var nickname = document.getElementById("nickname");
+	var registerButton = document.getElementById("btnRegister");
 	
 	function checkPassword(){
 		if(pass.value != confirmPass.value){
@@ -22,6 +23,7 @@ function register(){
 	    lReq.send(form);
 	    return lReq.responseText;
 	}
+	
 	if(checkPassword()){//密码格式没写错的话开始发送请求
 		registerForm = new FormData(registerForm);
 	    //var username = document.getElementById("username").value;
@@ -29,13 +31,17 @@ function register(){
 	    //loginForm.append("name",username);
 	    //loginForm.append("pass",password);
 	    var result=registerRequest(loginForm,"http://localhost:8080/Erudite/register","POST");//发送注册请求
-
-	    var resObj=eval('['+strJSON+']');
+	    
+	    debugger;
+	    var resObj=eval('['+result+']');
 	    if(typeof(resObj == 'object')){
 				if (resObj.suc==1 && resObj.err == 0) {//注册成功
 					console.log("register success");
 				}else console.log("register failed");
 		}
 	}
+	
+
 }
 document.getElementById("btnRegister").addEventListener("click","register");
+debugger;

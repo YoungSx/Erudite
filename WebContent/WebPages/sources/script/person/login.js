@@ -7,6 +7,7 @@ function login(){
 	function loginRequest(form,url,method){
 	    var lReq=new XMLHttpRequest();
 	    //lReq.open("POST","http://localhost:8080/Erudite/login");//目标文件
+	    debugger;
 	    lReq.open(method,url);
 	    lReq.send(form);
 	    return lReq.responseText;
@@ -19,7 +20,7 @@ function login(){
 	    var result=loginRequest(loginForm);//发送登陆请求
 	    
 	    debugger;
-	    var resObj=eval('['+strJSON+']');
+	    var resObj=eval('['+result+']');
 	    if(typeof(resObj == 'object')){
 	    		console.log(resObj);
 				if (resObj.suc==1 && resObj.err == 0) {//登陆成功
