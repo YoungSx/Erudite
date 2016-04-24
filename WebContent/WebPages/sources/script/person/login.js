@@ -16,16 +16,16 @@ function login(){
 	    var password = document.getElementById("password").value;
 	    var loginForm = document.getElementById("loginForm");
 	    loginForm = new FormData(loginForm,"http://localhost:8080/Erudite/login","POST");
-	    //loginForm.append("name",username);
-	    //loginForm.append("pass",password);
 	    var result=loginRequest(loginForm);//发送登陆请求
-
+	    
+	    debugger;
 	    var resObj=eval('['+strJSON+']');
 	    if(typeof(resObj == 'object')){
 	    		console.log(resObj);
 				if (resObj.suc==1 && resObj.err == 0) {//登陆成功
-					User.account = resObj.xxx.account;//JSON格式暂时不清楚
-					User.nickname= resObj.xxx.nickname;
+					console.log("secuss");
+					var myName="<%=session.getAttribute(\"MYNAME\")%>";
+				    alert(myName); 
 				}
 		}
 	}

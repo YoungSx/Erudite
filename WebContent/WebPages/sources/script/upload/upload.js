@@ -44,6 +44,7 @@ function readySubmit(files){
             var descriptText=document.getElementById("descriptText"+i);//读取描述
             
             uploadForm.append("descript"+i,[descriptText,descriptType]);//待续
+            
             debugger;
         }
     });
