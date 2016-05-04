@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zzxy.NetDict.Service.AccountManage;
 import com.zzxy.NetDict.Tools.JsonData;
+import com.zzxy.NetDict.Tools.SendJsonData;
 
 /**
  * Servlet implementation class Register
@@ -44,17 +45,29 @@ public class Register extends HttpServlet {
 	    
 	    int rt = am.userRegist(req);
 	    
+	    JsonData jd = new JsonData();
+	
+	    
 	    if(rt == 0)
 	    {
-	        JsonData.SendJson(resp, "regist fail");
+	    	jd.setData("注册失败！");
+	    	jd.setSuc(0);
+	    	jd.setErr(0);
+	        SendJsonData.SendJson(resp, jd);
 	    }
 	    else if(rt == -1)
 	    {
-	        JsonData.SendJson(resp, "用户名已存在");
+	    	jd.setData("用户名已存在！！");
+	    	jd.setSuc(0);
+	    	jd.setErr(-1);
+	        SendJsonData.SendJson(resp, jd);
 	    }
 	    else
 	    {
-	        JsonData.SendJson(resp, "regist success");
+	    	jd.setData("注册成功！");
+	    	jd.setSuc(1);
+	    	jd.setErr(0);
+	        SendJsonData.SendJson(resp, jd);
 	    }
 	    
 	    

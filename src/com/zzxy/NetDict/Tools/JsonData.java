@@ -8,25 +8,33 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 public class JsonData {
+	private Object data;//数据
+	private Integer suc;//成功标志
+	private Integer err;//失败标志
+	
+	
+	
+	
+	public Object getData() {
+		return data;
+	}
+	public void setData(Object data) {
+		this.data = data;
+	}
+	public Integer getSuc() {
+		return suc;
+	}
+	public void setSuc(Integer suc) {
+		this.suc = suc;
+	}
+	public Integer getErr() {
+		return err;
+	}
+	public void setErr(Integer err) {
+		this.err = err;
+	}
+	
  
-  /**
-   * @param httpresponse,要打包的数据
-   * @return 
- * @throws IOException 
-   */
-    public static void SendJson(HttpServletResponse resp,Object obj) throws IOException
-    {
-        resp.setContentType("text/javascript");//设置响应数据类型为json
-        resp.setCharacterEncoding("utf-8");//转码
-        
-        String json = new Gson().toJson(obj);
-        
-        System.out.println("json = "+json);
-        
-        PrintWriter pw = resp.getWriter();
-        pw.print(json);
-        pw.flush();
-        pw.close();
-    }
+
     
 }

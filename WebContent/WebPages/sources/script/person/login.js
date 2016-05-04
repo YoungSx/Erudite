@@ -3,6 +3,12 @@
  */
 if(typeof(User)!='object')	var User=new Object();
 function login(){
+	
+	
+	
+	
+	
+	
 	loginButton = document.getElementById("btnLogin");
 	function loginRequest(form,url,method){
 	    var lReq=new XMLHttpRequest();

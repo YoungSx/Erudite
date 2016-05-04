@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.zzxy.NetDict.Entity.User;
 import com.zzxy.NetDict.Service.AccountManage;
 import com.zzxy.NetDict.Tools.JsonData;
+import com.zzxy.NetDict.Tools.SendJsonData;
 
 /**
  * Servlet implementation class Login
@@ -55,11 +56,22 @@ public class Login extends HttpServlet {
 	       session.setAttribute("user", user);
 	       //TODO 登录成功后的页面跳转
 	       //resp.sendRedirect(arg0);
-	       JsonData.SendJson(resp, user);
+	       JsonData jd = new JsonData();
+	       
+	       jd.setSuc(1);
+	       jd.setErr(0);
+	       jd.setData(user);
+	       
+	       SendJsonData.SendJson(resp, jd);
 	   }
 	   else
 	   {
-	       JsonData.SendJson(resp, "登录失败");
+		   SendJsonData.SendJson(resp, "登录失败");
+		   JsonData jd = new JsonData();
+	       
+	       jd.setSuc(0);
+	       jd.setErr(0);
+	       
 	       
 	       //TODO 登录失败后的处理
 	     //resp.sendRedirect(arg0);
