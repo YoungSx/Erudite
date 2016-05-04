@@ -30,9 +30,9 @@ CREATE TABLE `file_folder` (
   `modifier` varchar(255) NOT NULL,
   `deleted` varchar(17) DEFAULT NULL,
   `deleter` varchar(255) DEFAULT NULL,
-  `delete_flag` smallint(1) NOT NULL,
+  `delete_flag` smallint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `file_folder` (
 
 LOCK TABLES `file_folder` WRITE;
 /*!40000 ALTER TABLE `file_folder` DISABLE KEYS */;
+INSERT INTO `file_folder` VALUES (1,'1','1','1','1','1','1',0),(2,'2','1','1','1','1','1',0),(3,'3','1','1','1','1','1',0);
 /*!40000 ALTER TABLE `file_folder` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,6 +89,9 @@ CREATE TABLE `files` (
   `mime_type` smallint(4) NOT NULL,
   `size` double NOT NULL,
   `real_path` varchar(255) NOT NULL,
+  `transition_path` varchar(255) DEFAULT NULL,
+  `thumb_path` varchar(255) DEFAULT NULL,
+  `descrp` varchar(255) DEFAULT NULL,
   `retain` double NOT NULL DEFAULT '1',
   `modified` varchar(17) NOT NULL,
   `modifier` varchar(255) NOT NULL,
@@ -95,8 +99,9 @@ CREATE TABLE `files` (
   `deleter` varchar(255) DEFAULT NULL,
   `delete_flag` smallint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `f_id_UNIQUE` (`f_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `f_id_UNIQUE` (`f_id`),
+  UNIQUE KEY `transition_path_UNIQUE` (`transition_path`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,6 +110,7 @@ CREATE TABLE `files` (
 
 LOCK TABLES `files` WRITE;
 /*!40000 ALTER TABLE `files` DISABLE KEYS */;
+INSERT INTO `files` VALUES (1,'1',1,123,'dd','d','fdfd',NULL,1,'1','1',NULL,NULL,1),(2,'2',1,123,'dd','fa','fdfd',NULL,1,'1','1',NULL,NULL,1),(3,'3',1,123,'dd','fd','fdfd',NULL,1,'1','1',NULL,NULL,1);
 /*!40000 ALTER TABLE `files` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-24 17:49:32
+-- Dump completed on 2016-05-04 10:29:45
