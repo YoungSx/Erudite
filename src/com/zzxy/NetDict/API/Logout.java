@@ -43,10 +43,12 @@ public class Logout extends HttpServlet {
 	    {
 	        //如果没有session
 	       // resp.sendRedirect(arg0);
+//TODO：提示
 	        return;
 	    }
 	    
 	    session.removeAttribute("user");
+//TODO:页面跳转及提示
 	    //resp.sendRedirect();
 	    
 	}

@@ -67,7 +67,7 @@
     <url-pattern>/FileUpload</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
+    <description>文件md5检查</description>
     <display-name>FileFeatureCheck</display-name>
     <servlet-name>FileFeatureCheck</servlet-name>
     <servlet-class>com.zzxy.NetDict.API.FileFeatureCheck</servlet-class>
@@ -75,5 +75,15 @@
   <servlet-mapping>
     <servlet-name>FileFeatureCheck</servlet-name>
     <url-pattern>/FileFeatureCheck</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>根据文件分类id获取文件列表</description>
+    <display-name>GetFileListById</display-name>
+    <servlet-name>GetFileListById</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.GetFileListById</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFileListById</servlet-name>
+    <url-pattern>/GetFileListById</url-pattern>
   </servlet-mapping>
 </web-app>
