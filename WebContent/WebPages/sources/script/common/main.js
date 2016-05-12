@@ -7,7 +7,8 @@ jQuery(document).ready(function($){
 
 	//cache DOM elements
 	var dashboard = $('.cd-side-navigation'),
-		mainContent = $('.cd-main'),
+		mainContent = $
+		('.cd-main'),
 		loadingBar = $('#cd-loading-bar');
 
 	//select a new section
