@@ -57,7 +57,7 @@
 
 <main class="cd-main">
   <section class="cd-section view visible">
-    <div class="fileView">
+    <div id="fileViewBox">
 
 
       <div class="fileName">

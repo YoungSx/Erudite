@@ -12,8 +12,12 @@ function JSONReaquest(url, method) {
 		return false;
 }
 // 文件预览功能
-function viewFile(fileId) {// 未完成
-
+function viewFile(fileId,transitionPath) {// 未完成
+	var fileViewBox = document.getElementById("fileViewBox");
+	fileViewBox.innerHTML="";
+	var fileViewIframe = createElement("iframe");//增加一个iframe
+	fileViewIframe.setAttribute("src",transitionPath);
+	fileViewBox.appendChild(fileViewIframe);
 }
 function dlFile(fileId) {// 未完成
 	// 获取文档接口getFile
@@ -40,9 +44,9 @@ function getFileListRequest(url, method) {
 }
 function getFile(rsEle) {
 
-	if (rsEle.view == 1) {
-		viewFile(this.id);
-	} else {
+	if (rsEle.transitionPath != "") { //有路径，代表能预览，执行预览
+		viewFile(rsEle.id,rsEle.transitionPath);
+	} else {//没有路径，不能预览，执行下载
 		dlFile(this.id);
 	}
 }
@@ -50,7 +54,7 @@ function veiwFileListPage(id) {//显示文件列表页
 	var resObj = JSONRequest(
 			"http://localhost:8080/Erudite/getFileListById?id=" + id, "GET");
 	if (resObj == false) {
-		console.log("register faled");
+		console.log("get faled");
 		return false;
 	}
 	for (var i = 0; i < resObj.data.length; i++) {
@@ -58,8 +62,8 @@ function veiwFileListPage(id) {//显示文件列表页
 		var fileName = "";
 		var fileDescribe = "";
 		var id = "";
-		var canView = "";
-		document.write("<div class='resultShow' view='" + canView + "' id='"
+		var transitionPath = "";
+		document.write("<div class='resultShow' transitionPath='" + transitionPath + "' id='"
 				+ id + "' onClick='getFile(this)'>" + // 绑定点击事件，查看文件详情
 				"<div class='fileIcon' ><img src='" + url + "'></div>"
 				+ "<div class='fileName'> " + fileName + " </div>"
