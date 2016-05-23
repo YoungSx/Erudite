@@ -15,7 +15,7 @@ function JSONReaquest(url, method) {
 function viewFile(fileId,transitionPath) {// 未完成
 	var fileViewBox = document.getElementById("fileViewBox");
 	fileViewBox.innerHTML="";
-	var fileViewIframe = createElement("iframe");//增加一个iframe
+	var fileViewIframe = document.createElement("iframe");//增加一个iframe
 	fileViewIframe.setAttribute("src",transitionPath);
 	fileViewBox.appendChild(fileViewIframe);
 }

@@ -58,15 +58,7 @@
 <main class="cd-main">
   <section class="cd-section view visible">
     <div id="fileViewBox">
-
-
-      <div class="fileName">
-      文件名.doc
-      </div>
-
-      <div class="viewWinows">
-        假装这有文档,标题一定要长<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>假装这有文档<br>
-      </div>
+		<iframe src="http://www.qq.com/"></iframe>
      </div>
     <div class="relation">
     文档关联<br><br>这就是文档关联
@@ -76,29 +68,6 @@
     </div>
       </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -115,7 +84,7 @@
 <script src="sources/script/common/jquery-2.1.4.js"></script>
 <script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
-<!-- <script src="sources/script/common/func.js"></script> -->
+<script src="sources/script/common/func.js"></script>
 <script src="sources/script/person/login.js"></script>
 <script src="sources/script/upload/dropUpload.js"></script>
 <script type='text/javascript' src='sources/script/common/jquery.particleground.min.js'></script>
