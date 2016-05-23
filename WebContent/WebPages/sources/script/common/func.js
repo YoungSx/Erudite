@@ -11,6 +11,23 @@ function JSONReaquest(url, method) {
 	} else
 		return false;
 }
+
+
+
+function downloadFile(url) { //下载文件函数
+    try{ 
+        var elemIF = document.createElement("iframe");   
+        elemIF.src = url;   
+        elemIF.style.display = "none";   
+        document.body.appendChild(elemIF);   
+    }catch(e){ 
+
+    } 
+}
+
+
+
+
 // 文件预览功能
 function viewFile(fileId,transitionPath) {// 未完成
 	var fileViewBox = document.getElementById("fileViewBox");
@@ -19,6 +36,10 @@ function viewFile(fileId,transitionPath) {// 未完成
 	fileViewIframe.setAttribute("src",transitionPath);
 	fileViewBox.appendChild(fileViewIframe);
 }
+
+
+
+
 function dlFile(fileId) {// 未完成
 	// 获取文档接口getFile
 	var result = JSONReaquest("http://localhost:8080/Erudite/getFile?fileId="
@@ -29,12 +50,13 @@ function dlFile(fileId) {// 未完成
 	}
 	var fileURL = result.fileURL;
 	// 开始下载文件
-
+	downloadFile(fileURL);
 }
 
-// 遍历文件功能
 
-var detailedList = document.getElementByClassName("detailedList");
+
+// 遍历文件功能
+var detailedList = document.getElementsByClassName("detailedList");
 
 function getFileListRequest(url, method) {
 	var lReq = new XMLHttpRequest();
@@ -42,6 +64,9 @@ function getFileListRequest(url, method) {
 	lReq.send();
 	return lReq.responseText;
 }
+
+
+
 function getFile(rsEle) {
 
 	if (rsEle.transitionPath != "") { //有路径，代表能预览，执行预览
@@ -50,6 +75,9 @@ function getFile(rsEle) {
 		dlFile(this.id);
 	}
 }
+
+
+
 function veiwFileListPage(id) {//显示文件列表页
 	var resObj = JSONRequest(
 			"http://localhost:8080/Erudite/getFileListById?id=" + id, "GET");
@@ -71,13 +99,22 @@ function veiwFileListPage(id) {//显示文件列表页
 				+ " </div></div>");
 	}
 }
+
+
+
+
 function toFileListPage(id) {//跳转到文件列表页 待定
 	// console.log(document.getElementByClassName("cd-side-navigation")[0]);
 	// document.getElementByClassName("cd-side-navigation")[1].click();
-
+	window.location.href='http://localhost:8080/Erudite/WebPages/view2.jsp';
 }
+
+
+
 for (var i = 0; i < detailedList.length; i++) {
 	detailedList[i].addEventListener("click", function() {
+		console.log(123);
+		this.typename="123";
 		var typeName = this.typename;
 		toFileListPage(typeName.id);
 	});
