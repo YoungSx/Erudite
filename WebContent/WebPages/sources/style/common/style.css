@@ -834,7 +834,7 @@ padding-top: 5px;
 .fileName{
 padding-top: 5px;
 }
-.fileView{
+#fileViewBox{
    float: left;
   background-color: #FFFFFF;
   width: 70%;
