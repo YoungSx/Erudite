@@ -37,6 +37,7 @@ function register(){
 		    if(typeof(resObj == 'object')){
 					if (resObj.suc==1 && resObj.err == 0) {//注册成功
 						console.log("register success");
+						location.reload();//页面刷新，跳转到login
 					}else console.log("register failed");
 			}
 		}

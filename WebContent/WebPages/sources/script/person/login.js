@@ -25,14 +25,20 @@ function login(){
 	    loginForm = new FormData(loginForm,"http://localhost:8080/Erudite/login","POST");
 	    var result=loginRequest(loginForm);//发送登陆请求
 	    
-	    debugger;
+	    var User;
 	    var resObj=eval('['+result+']');
 	    if(typeof(resObj == 'object')){
 	    		console.log(resObj);
 				if (resObj.suc==1 && resObj.err == 0) {//登陆成功
 					console.log("secuss");
-					var myName="<%=session.getAttribute(\"MYNAME\")%>";
-				    alert(myName); 
+					
+				    alert("登陆成功");
+				    User.append("userName",resObj.data.account);
+				    User.append("nickName",resObj.data.nick_name);
+				    User.append("email",resObj.data.e_mail);
+				    console.log(User.userName);
+				}else{
+					alert("登陆失败");
 				}
 		}
 	}
