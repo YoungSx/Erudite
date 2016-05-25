@@ -18,6 +18,14 @@ function register(){
 		}
 	}
 	function registerRequest(form,url,method){
+		/*
+		    {
+			    "account": "123",
+			    "pass": "123",
+			    "email": "example@123.com",
+			    "nickName": "zhangsan"
+			}
+		 */
 	    var lReq=new XMLHttpRequest();
 	    lReq.open(method,url);
 	    lReq.send(form);
