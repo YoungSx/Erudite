@@ -14,6 +14,7 @@ function JSONReaquest(url, method) {
 
 
 
+
 function downloadFile(url) { //下载文件函数
     try{ 
         var elemIF = document.createElement("iframe");   
