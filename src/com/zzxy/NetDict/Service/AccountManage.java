@@ -2,6 +2,8 @@ package com.zzxy.NetDict.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +19,9 @@ public class AccountManage {
      */
     public int userRegist(HttpServletRequest req)
     {
+    	
+
+    	
         String account = req.getParameter("account");
         
         String pass = req.getParameter("pass");

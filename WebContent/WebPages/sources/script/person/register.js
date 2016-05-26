@@ -1,5 +1,5 @@
 function register(){
-	var registerForm = document.getElementById("registerForm");
+	var registerFormEle = document.getElementById("registerForm");
 	var account = document.getElementById("username");
 	var pass = document.getElementById("password");
 	var confirmPass = document.getElementById("confirmPassword");
@@ -33,12 +33,14 @@ function register(){
 	}
 	registerButton.onclick = function(){
 		if(checkPassword()){//密码格式没写错的话开始发送请求
-			registerForm = new FormData(registerForm);
+			registerForm = new FormData(registerFormEle);
+			console.log(registerFormEle.account.value);
+			//debugger;
 		    //var username = document.getElementById("username").value;
 		    //var password = document.getElementById("password").value;
 		    //loginForm.append("name",username);
 		    //loginForm.append("pass",password);
-		    var result=registerRequest(registerForm,"http://localhost:8080/Erudite/register","POST");//发送注册请求
+		    var result=registerRequest(registerFormEle,"http://localhost:8080/Erudite/Register","GET");//发送注册请求
 		    
 		    debugger;
 		    var resObj=eval('['+result+']');

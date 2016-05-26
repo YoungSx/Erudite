@@ -1,6 +1,8 @@
 package com.zzxy.NetDict.API;
 
 import java.io.IOException;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,6 +42,10 @@ public class Register extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    super.service(req, resp);
+	    
+    	Map<String,String[]> map = req.getParameterMap();
+    	
+    	System.out.println(map);
 	    
 	    AccountManage am = new AccountManage();
 	    
