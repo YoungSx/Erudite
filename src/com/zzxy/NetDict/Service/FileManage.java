@@ -24,4 +24,29 @@ public class FileManage {
          return fileManage.fileFeatureCheck(fileFeature);     
      }
      
+     /**
+      * 将用户上传的文件转换成txt文件方便索引
+      */
+     public static void fileConvert2indexTxt()
+     {
+    	 
+     }
+     
+     /**
+      * 将用户上传的文件转换成可以在线预览的文件
+      */
+     public static void fileConvert2previewFile()
+     {
+    	 
+     }
+     
+     /**
+      * 制作相关文件的缩略图
+      */
+     public static void createFileThumbPic()
+     {
+    	 
+     }
+     
+     
 }

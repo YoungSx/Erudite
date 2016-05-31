@@ -1,13 +1,12 @@
 package dBTest;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 
 import com.zzxy.NetDict.DB.DBTransaction;
+import com.zzxy.NetDict.Entity.TransationInfo;
 
 public class DBTransationTest {
 
@@ -26,43 +25,53 @@ public class DBTransationTest {
 				+ " `deleted`, `deleter`, `delete_flag`) "
 				+ "VALUES (?,?,?,?,?,?,?,?,?)";
 		
-		List<Object> list1 = new ArrayList<Object>();
-		list1.add("sdfsd");
-		list1.add(2);
-		list1.add(3);
-		list1.add(4);
-		list1.add("sdfasdf");
-		list1.add("sdfasdf");
-		list1.add(3);
-		list1.add(4);
-		list1.add(1);
-		list1.add(2);
-		list1.add(3);
-		list1.add(4);
-		list1.add(1);
-		list1.add(0);
+		
+		List<Object> list = new ArrayList<>();
+		
+		list.add("111sdsssfsd");
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.add("111sdfassssdf");
+		list.add("111sdfassssdf");
+		list.add(3);
+		list.add(4);
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.add(1);
+		list.add(0);
 
-		List<Object> list2 = new ArrayList<Object>();
-		list2.add("sdfasd");
-		list2.add(2);
-		list2.add(3);
-		list2.add(4);
-		list2.add(1);
-		list2.add(2);
-		list2.add(3);
-		list2.add(4);
-		list2.add(0);
+		List<Object> list1 = new ArrayList<>();
+		list1.add("1111sdfassssd");
+		list1.add(2);
+		list1.add(3);
+		list1.add(4);
+		list1.add(1);
+		list1.add(2);
+		list1.add(3);
+		list1.add(4);
+		list1.add(0);
 		
-		Map<String,List<Object>> map = new HashMap<String,List<Object>>();
-		Map<String,List<Object>> map1 = new HashMap<String,List<Object>>();
-		map.put(sql1, list1);
-		map1.put(sql2, list2);
+		TransationInfo info = new TransationInfo();
+		TransationInfo info1 = new TransationInfo();
 		
-		List<Map<String,List<Object>>> list = new ArrayList<Map<String,List<Object>>>();
-		list.add(map);
-		list.add(map1);
+		info.setSql(sql1);
+		info.setParams(list);
 		
-		boolean rt = DBTransaction.doTransaction(list);
+		
+		info1.setSql(sql2);
+		info1.setParams(list1);
+		
+		
+		
+		List<TransationInfo> list3 = new ArrayList<TransationInfo>();
+		
+		list3.add(info);
+		list3.add(info1);
+		
+		boolean rt = DBTransaction.doTransaction(list3);
 		
 		System.out.println(rt);
 		

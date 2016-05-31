@@ -2,7 +2,7 @@ package com.zzxy.NetDict.Entity;
 
 import java.util.List;
 
-public class TransaTion {
+public class TransationInfo {
 
 	private String sql; //要执行的sql语句
 	private List<Object> params; //sql语句对应的参数
