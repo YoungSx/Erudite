@@ -40,7 +40,7 @@ function register(){
 		    //var password = document.getElementById("password").value;
 		    //loginForm.append("name",username);
 		    //loginForm.append("pass",password);
-		    var result=registerRequest(registerFormEle,"http://localhost:8080/Erudite/Register","GET");//发送注册请求
+		    var result=registerRequest(registerForm,"http://localhost:8080/Erudite/Register","POST");//发送注册请求
 		    
 		    debugger;
 		    var resObj=eval('['+result+']');
