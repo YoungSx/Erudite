@@ -2,9 +2,9 @@ package com.zzxy.NetDict.DaoImpl;
 
 import java.sql.ResultSet;
 
+import com.zzxy.NetDict.DB.DBBase;
 import com.zzxy.NetDict.Dao.AccountManageDao;
 import com.zzxy.NetDict.Entity.User;
-import com.zzxy.NetDict.Tools.DBBase;
 import com.zzxy.NetDict.Tools.TimeToString;
 
 public class AccountManageDaoImpl implements AccountManageDao {

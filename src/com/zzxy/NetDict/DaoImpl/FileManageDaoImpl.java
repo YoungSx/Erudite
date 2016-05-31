@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zzxy.NetDict.DB.DBBase;
 import com.zzxy.NetDict.Dao.FileManageDao;
 import com.zzxy.NetDict.Entity.File;
-import com.zzxy.NetDict.Tools.DBBase;
 
 public class FileManageDaoImpl implements FileManageDao {
 
