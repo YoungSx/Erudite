@@ -61,13 +61,6 @@ public class MakeMD5 {
     }
 
 
-    /**
-     * 求一个字符串的md5值
-     * @param target 字符串
-     * @return md5 value
-     */
-    public static String MD5(String target) {
-        return DigestUtils.md5Hex(target);
-    }
+
 
 }

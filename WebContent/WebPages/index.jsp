@@ -148,6 +148,5 @@
 <script src="sources/script/common/func.js"></script>
 <script src="sources/script/person/login.js"></script>
 <script src="sources/script/upload/dropUpload.js"></script>
-<script type='text/javascript' src='sources/script/common/jquery.particleground.js'></script>
 </body>
 </html>

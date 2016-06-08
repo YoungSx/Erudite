@@ -1,7 +1,5 @@
 package com.zzxy.NetDict.Entity;
 
-import com.zzxy.NetDict.Base.BaseEntity;
-
 public class User extends BaseEntity{
 
 	

@@ -46,7 +46,9 @@ public class GetFileListById extends HttpServlet {
 		
 		FileManageDao fmd = new FileManageDaoImpl();
 		
-		List fileList = fmd.getFileListById(req.getParameter("id"));//获取文件列表
+		
+		
+		List fileList = fmd.getFileListById(req.getParameter("fdId"));//获取文件列表
 		
 		JsonData jd = new JsonData();
 		

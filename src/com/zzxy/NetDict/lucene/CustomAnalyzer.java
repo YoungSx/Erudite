@@ -13,9 +13,9 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
 
 public class CustomAnalyzer {
 
-	public static List<Object> sentenceCut(String sentence)
+	public static List<String> sentenceCut(String sentence)
 	{
-		List<Object> wordsList = new ArrayList<Object>();
+		List<String> wordsList = new ArrayList<>();
 		
 		Analyzer analyzer = new IKAnalyzer(true);
 		

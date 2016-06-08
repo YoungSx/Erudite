@@ -26,7 +26,7 @@
   </filter>
   <filter-mapping>
     <filter-name>SetCharacterEncodingFilter</filter-name>
-    <url-pattern>/SetCharacterEncodingFilter</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
   <servlet>
     <description>登录</description>
@@ -85,5 +85,95 @@
   <servlet-mapping>
     <servlet-name>GetFileListById</servlet-name>
     <url-pattern>/GetFileListById</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetFolders</display-name>
+    <servlet-name>GetFolders</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.GetFolders</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFolders</servlet-name>
+    <url-pattern>/GetFolders</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetFoldersById</display-name>
+    <servlet-name>GetFoldersById</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.GetFoldersById</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetFoldersById</servlet-name>
+    <url-pattern>/GetFoldersById</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QueryServlet</display-name>
+    <servlet-name>QueryServlet</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.QueryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryServlet</servlet-name>
+    <url-pattern>/QueryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateFolder</display-name>
+    <servlet-name>CreateFolder</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.CreateFolder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateFolder</servlet-name>
+    <url-pattern>/CreateFolder</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateConfigFile</display-name>
+    <servlet-name>UpdateConfigFile</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.UpdateConfigFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateConfigFile</servlet-name>
+    <url-pattern>/UpdateConfigFile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpFileClicks</display-name>
+    <servlet-name>UpFileClicks</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.UpFileClicks</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpFileClicks</servlet-name>
+    <url-pattern>/UpFileClicks</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetConfigs</display-name>
+    <servlet-name>GetConfigs</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.GetConfigs</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetConfigs</servlet-name>
+    <url-pattern>/GetConfigs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ConfigSet</display-name>
+    <servlet-name>ConfigSet</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.ConfigSet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfigSet</servlet-name>
+    <url-pattern>/ConfigSet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminRePwd</display-name>
+    <servlet-name>AdminRePwd</servlet-name>
+    <servlet-class>com.zzxy.NetDict.API.AdminRePwd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminRePwd</servlet-name>
+    <url-pattern>/AdminRePwd</url-pattern>
   </servlet-mapping>
 </web-app>

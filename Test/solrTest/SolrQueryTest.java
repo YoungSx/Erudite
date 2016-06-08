@@ -16,9 +16,11 @@ public class SolrQueryTest {
 		String field = ConfigParams.FIELD_CONTENT;
 		List<String> list = new ArrayList<String>();
 		
-		list.add("789b");
-//		list.add("活动");
-//		list.add("山东");
+		list.add("大学");
+		list.add("");
+		list.add("我");
+		list.add("    ");
+		list.add("我");
 		
 		SolrQuerys.customSolrQuery(field, list);
 		

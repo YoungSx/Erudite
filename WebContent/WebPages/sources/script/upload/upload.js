@@ -37,7 +37,7 @@ function readySubmit(files){
     var uploadDescribeSubmit = document.getElementById("uploadDescribeSubmit");
     uploadDescribeSubmit.addEventListener("click", function(){
     	console.log(filesList);
-    	debugger;
+    	//debugger;
     	for(var i=0;i<filesList.length;i++){//遍历所有文件对应的分类和描述
             var sel=document.getElementById("descriptType"+i)
             var descriptType=sel.options[sel.options.selectedIndex].text;//读取选择的分类
@@ -45,10 +45,11 @@ function readySubmit(files){
             
             uploadForm.append("descript"+i,[descriptText,descriptType]);//待续
             
-            debugger;
+            //debugger;
         }
+    	submitFile(files);
     });
-    //submitFile(files);
+    
 
 }
 function submitFile(files){

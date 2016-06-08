@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zzxy.NetDict.Service.FileManage;
+import com.zzxy.NetDict.Service.FileManageService;
 import com.zzxy.NetDict.Tools.JsonData;
 import com.zzxy.NetDict.Tools.SendJsonData;
 
@@ -46,7 +46,7 @@ public class FileFeatureCheck extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    super.service(req, resp);
 	    
-	    FileManage fileManage = new FileManage();
+	    FileManageService fileManage = new FileManageService();
 	    
 	    int num = fileManage.fileFeatureCheck(req, resp);
 	    

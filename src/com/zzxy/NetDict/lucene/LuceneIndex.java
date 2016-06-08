@@ -1,42 +1,27 @@
 package com.zzxy.NetDict.lucene;
 
-	import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
+	import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.CorruptIndexException;
-import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.IndexableField;
 import org.apache.lucene.index.Term;
-import org.apache.lucene.queryparser.classic.ParseException;
-import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.store.LockObtainFailedException;
-import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
 import org.wltea.analyzer.lucene.IKAnalyzer;
+
+import com.zzxy.NetDict.Config.ConfigParams;
 
 	public class LuceneIndex {
 		
@@ -96,7 +81,7 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
 		 * @param indexPath
 		 * @param fieldAndContentList
 		 */
-		public static void updateIndex(String indexPath,String indexId,List<Map<String,Object>> fieldAndContentList){
+		public static void updateIndex(String indexPath,String indexId,Map<String,Object> fieldAndContentMap){
 			//实例化IKAnalyzer分词器
 			Analyzer analyzer = new IKAnalyzer(true);
 			
@@ -108,26 +93,24 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
 				
 				IndexWriter iw = new IndexWriter(dir,config);
 				
+				Document doc = new Document();//创建document
+				Set<String> fieldSet = fieldAndContentMap.keySet();//获取所有map里的key
+				Iterator<String> iter = fieldSet.iterator();//创建一个迭代器
 				
-				for(Map<String,Object> fieldAndContentMap : fieldAndContentList)
+				while(iter.hasNext())
 				{
-					Document doc = new Document();//创建document
-					Set<String> fieldSet = fieldAndContentMap.keySet();//获取所有map里的key
-					Iterator<String> iter = fieldSet.iterator();//创建一个迭代器
-					
-					while(iter.hasNext())
-					{
-						String fieldName = iter.next();//获取map里的key
-						String fieldContent = (String) fieldAndContentMap.get(fieldName);//根据key获取value
-						IndexableField field = new TextField(fieldName,fieldContent,Field.Store.YES);
-						//TODO:查询范文，全字匹配还是单词匹配
+					String fieldName = iter.next();//获取map里的key
+					String fieldContent = (String) fieldAndContentMap.get(fieldName);//根据key获取value
+					IndexableField field = new TextField(fieldName,fieldContent,Field.Store.YES);
+					//TODO:查询范文，全字匹配还是单词匹配
 
-						doc.add(field);
-					}
-					iw.updateDocument(new Term("id",indexId), doc);
-					iw.commit();
-					
+					System.out.println("LuceneIndex : field = "+fieldName+"     content = "+fieldContent);
+					doc.add(field);
 				}
+				iw.updateDocument(new Term(ConfigParams.FIELD_ID,indexId), doc);
+				IndexWriter.unlock(dir);
+				iw.commit();
+					
 				iw.close();
 			}			
 			catch(Exception e)

@@ -1,16 +1,14 @@
 package com.zzxy.NetDict.Solr;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
-import org.apache.solr.client.solrj.response.FacetField;
-import org.apache.solr.client.solrj.response.FacetField.Count;
 import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.client.solrj.response.RangeFacet;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 
@@ -25,14 +23,21 @@ public class SolrQuerys {
 	 * @param queryField 匹配字段
 	 * @param queryWords 关键词
 	 */
-	public static void customSolrQuery(String queryField,List<String> queryWords)
+	public static List<Map<String,Object>> customSolrQuery(String queryField,List<String> queryWords)
 	{
+		List<Map<String,Object>> matchFilesList = new ArrayList<>();//搜索到的文件的id
+		
 		HttpSolrServer solrServer = SolrManage.getSolrServerInsetence();
 		String queryString = "";
 		
-		for(int index = 0;index < queryWords.size();index ++)
+		for(int index = 0;index < queryWords.size();index++)
 		{
 			String queryWord = queryWords.get(index);
+			if(queryWord.trim().equals(""))
+			{
+				queryString = queryString.substring(0, queryString.lastIndexOf("AND"));
+				continue;
+			}
 			if(index < queryWords.size() - 1)
 			{
 				queryString += (queryField +":"+ queryWord + " AND ");
@@ -52,18 +57,17 @@ public class SolrQuerys {
 		params.set("df", ConfigParams.FIELD_CONTENT);
 		
 		//显示域
-		String[] fields = {ConfigParams.FIELD_ID, ConfigParams.FIELD_CONTENT,ConfigParams.FIELD_NAME,
-				ConfigParams.FIELD__ID,ConfigParams.FIELD_TRANSITIONPATH,
-				ConfigParams.FIELD_DOWNLOADPATH};
+		String[] fields = {ConfigParams.FIELD_ID, ConfigParams.FIELD_CONTENT,ConfigParams.FIELD_NAME};
 		params.setFields(fields);
 		
 		//高亮
-		params.addHighlightField(ConfigParams.FIELD_CONTENT);
+		
 		params.setHighlight(true);
+		//显示的字数
+		params.setHighlightFragsize(50);
+		params.addHighlightField(ConfigParams.FIELD_CONTENT);
 		params.setHighlightSimplePre("<em class=\"highlight\" >");
 		params.setHighlightSimplePost("</em>");
-		//显示的字数
-		params.setHighlightFragsize(10);
 		
 		
 		  //排序，可以添加多个。先加入的 优先级高  
@@ -81,8 +85,8 @@ public class SolrQuerys {
 		
 		//facet   
         //FacetField统计的域  
-        String[] ftf = {ConfigParams.FIELD_NAME,ConfigParams.FIELD_CONTENT};  
-        params.addFacetField(ftf);  
+//        String[] ftf = {ConfigParams.FIELD_NAME,ConfigParams.FIELD_CONTENT};  
+//        params.addFacetField(ftf);  
         //RangeFacet统计，从1开始，到28结束，每隔10个统计一次。最后一次大于28的也会统计进去。  
 //        params.addNumericRangeFacet("age", 1, 28, 10);  
         
@@ -120,31 +124,38 @@ public class SolrQuerys {
             //第一个map key:document.getFieldValue("id")文档id值    第二个map key:高亮的域名   
 //             Map<String,Map<String,List<String>>> map = response.getHighlighting();  
 //             System.out.println("map = "+map);
-             
-            System.out.println("total hits:"+list.getNumFound());  
+            System.out.println("total hits:"+list.getNumFound()+"\n"); 
+            
             for(SolrDocument doc : list)
             {  
-            	System.out.println("doc = "+doc);
-//                System.out.println("id:"+doc.getFieldValue("id"));  
-                System.out.println("name:"+doc.get("name"));  
-                System.out.println("content:"+doc.get("content"));  
+            	String fileId = (String) doc.getFieldValue(ConfigParams.FIELD_ID);
+            	String content = (String)doc.getFieldValue(queryField);
+            	content = content.substring(0, 300);
+            	
+            	Map<String,Object> docMap = new HashMap<>();
+            	docMap.put(ConfigParams.FIELD_ID, fileId);
+            	docMap.put(queryField, content);
+            	matchFilesList.add(docMap);
+            	
+//            	System.out.println("doc = "+doc);
+//                System.out.println("_id:"+doc.getFieldValue("_id"));  
+//                System.out.println("id:"+doc.getFieldValue("id")); 
+//                System.out.println("name:"+doc.get("name"));  
+//                System.out.println("content:"+doc.get("content"));  
 //                System.out.println("age:"+doc.getFieldValue("age"));  
 //                System.out.println("testik:"+doc.get("testik"));  
 //                System.out.println("hl:"+map.get(doc.getFieldValue("id")).get("testik").get(0));  
                 //修改doc方法 document.setField(高亮域, 高亮的值);  
-//                doc.setField("testik", map.get(doc.getFieldValue("id")).get("testik").get(0));  
-                System.out.println("hl testik:"+doc.get("content"));  
+//                doc.setField("content", map.get(doc.getFieldValue("content")).get("大学").get(0));  
+//                System.out.println("hl testik:"+doc.get("content"));  
                 System.out.println();  
 
             } 
-        
 			
 		} catch (SolrServerException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+        return matchFilesList;
 	}
 }
 

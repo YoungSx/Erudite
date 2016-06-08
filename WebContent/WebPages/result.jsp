@@ -57,7 +57,7 @@
 <!-- .cd-side-navigation -->
 <main class="cd-main">
   <section class="cd-section search visible">
-      <div class="result" >
+      <div id="result" >
       <div>关于“1”的结果</div>
       <div class="resultShow">
         <div class="fileIcon">

@@ -7,28 +7,27 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.zzxy.NetDict.API.FormDataDecode;
 import com.zzxy.NetDict.Dao.AccountManageDao;
 import com.zzxy.NetDict.DaoImpl.AccountManageDaoImpl;
 import com.zzxy.NetDict.Entity.User;
 
-public class AccountManage {
+public class AccountManageService {
     
     /**
      * 用户注册
      * @return 正数：注册成功，0：注册失败，-1：用户名冲突
      */
-    public int userRegist(HttpServletRequest req)
+    public int userRegist(Map<String,String> params)
     {
     	
-
-    	
-        String account = req.getParameter("account");
+        String account = params.get("account");
         
-        String pass = req.getParameter("pass");
+        String pass = params.get("pass");
         
-        String email = req.getParameter("email");
+        String email = params.get("email");
         
-        String nickName = req.getParameter("nickName");
+        String nickName = params.get("nickName");
         
         User user = new User(account, pass, nickName, email);
         
@@ -45,9 +44,11 @@ public class AccountManage {
      {
          AccountManageDao amd = new AccountManageDaoImpl();
          
-         String account = req.getParameter("account");
+         Map<String,String> ma = FormDataDecode.formDataDecode(req);
          
-         String pass = req.getParameter("pass");
+         String account = ma.get("account");
+         
+         String pass =  ma.get("pass");
          
          User user = new User();
          

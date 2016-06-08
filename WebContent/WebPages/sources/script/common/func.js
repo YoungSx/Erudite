@@ -1,9 +1,12 @@
-function JSONReaquest(url, method) {
+function JSONRequest(url, method) {
 	var lReq = new XMLHttpRequest();
-	lReq.open(method, url);
+	lReq.open(method, url,false);
 	lReq.send();
+//	console.log(lReq.responseText);
 	var resObj = eval('[' + lReq.responseText + ']');
-	if (typeof (resObj == 'object')) {
+	//if (typeof (resObj == 'object')) {
+	if(resObj != 'undefined'){
+		resObj=resObj[0];
 		if (resObj.suc == 1 && resObj.err == 0) {
 			return resObj;
 		} else
@@ -81,23 +84,27 @@ function getFile(rsEle) {
 
 function veiwFileListPage(id) {//显示文件列表页
 	var resObj = JSONRequest(
-			"http://localhost:8080/Erudite/getFileListById?id=" + id, "GET");
+			"http://localhost:8080/Erudite/GetFileListById?fdId=" + id, "GET");
 	if (resObj == false) {
 		console.log("get faled");
 		return false;
 	}
 	for (var i = 0; i < resObj.data.length; i++) {
-		var url = "";
-		var fileName = "";
-		var fileDescribe = "";
-		var id = "";
+		console.log(resObj.data[i]);
+		var url = resObj.data[i].real_path;
+		var IconUrl = "";
+		var fileName = resObj.data[i].f_name;
+		var fileDescribe = resObj.data[i].descrp;
+		var id = resObj.data[i].f_id;
 		var transitionPath = "";
-		document.write("<div class='resultShow' transitionPath='" + transitionPath + "' id='"
+		if( "html_path" in resObj.data[i])	transitionPath = resObj.data[i].html_path;
+		
+		resultShow+="<div class='resultShow' transitionPath='" + transitionPath + "' id='"
 				+ id + "' onClick='getFile(this)'>" + // 绑定点击事件，查看文件详情
-				"<div class='fileIcon' ><img src='" + url + "'></div>"
+				"<div class='fileIcon' ><img src='" + IconUrl + "'></div>"
 				+ "<div class='fileName'> " + fileName + " </div>"
 				+ "<div class='fileDescribe'> " + fileDescribe
-				+ " </div></div>");
+				+ " </div></div>";
 	}
 }
 

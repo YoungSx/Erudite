@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import com.zzxy.NetDict.DB.DBBase;
 import com.zzxy.NetDict.Dao.AccountManageDao;
 import com.zzxy.NetDict.Entity.User;
-import com.zzxy.NetDict.Tools.TimeToString;
+import com.zzxy.NetDict.Tools.StringUtils;
 
 public class AccountManageDaoImpl implements AccountManageDao {
 
@@ -26,7 +26,7 @@ public class AccountManageDaoImpl implements AccountManageDao {
         
         String email = user.getE_mail();
         
-        String dateNow = TimeToString.getNowToString();
+        String dateNow = StringUtils.getNowToString();
         
         int rt = db.saveOrUpdate(sql, account,pass,2,nickName,0,0,email,dateNow,account,0);
         
@@ -47,5 +47,32 @@ public class AccountManageDaoImpl implements AccountManageDao {
         
         return rs;
     }
+
+	@Override
+	public int rePwd(User user) {
+		String sql = "UPDATE user_info SET pass = ? WHERE account = ? AND delete_flag = 0";
+		
+		return db.saveOrUpdate(sql, user.getPass(),user.getAccount());
+	}
+
+	@Override
+	public int checkPerm(User user) {
+		int perm = -1;
+		String sql = "SELECT perm FROM user_info WHERE account = ? AND pass = ? AND delete_flag = 0";
+		String account = user.getAccount();
+		String pass = user.getPass();
+		ResultSet rs = db.executeQueryRS(sql, new String[]{account,pass});
+		try{
+			while(rs.next())
+			{
+				perm = rs.getInt("perm");
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return perm;
+	}
     
 }

@@ -2,7 +2,7 @@ package luceneTest;
 
 import org.junit.Test;
 
-import com.zzxy.NetDict.lucene.FileManage;
+import com.zzxy.NetDict.Service.FileManageService;
 
 import junit.framework.TestCase;
 
@@ -11,7 +11,7 @@ public class FileManageTest{
 	@Test
 	public void testGetFileName()
 	{
-		System.out.println(FileManage.getFileName("1"));
+		System.out.println(FileManageService.getFileName("1"));
 	}
 	
 	@Test
@@ -19,9 +19,15 @@ public class FileManageTest{
 	{
 		String filePath = "/Users/Magic_Zhang/desktop/test.txt";
 		
-		FileManage.getFileContent(filePath);
+		FileManageService.getFileContent(filePath);
 		
 	}
 	
+	@Test
+	public void getFileSuffixNameTest()
+	{
+		String str = "sdfasdfasd.txt";
+		System.out.println(FileManageService.getFileSuffixName(str));
+	}
 	
 }

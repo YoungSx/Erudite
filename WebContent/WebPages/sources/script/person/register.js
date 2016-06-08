@@ -18,36 +18,27 @@ function register(){
 		}
 	}
 	function registerRequest(form,url,method){
-		/*
-		    {
-			    "account": "123",
-			    "pass": "123",
-			    "email": "example@123.com",
-			    "nickName": "zhangsan"
-			}
-		 */
 	    var lReq=new XMLHttpRequest();
-	    lReq.open(method,url);
+	    lReq.open(method,url,false);
 	    lReq.send(form);
+	    console.log("result:"+lReq.responseText);
 	    return lReq.responseText;
 	}
 	registerButton.onclick = function(){
 		if(checkPassword()){//密码格式没写错的话开始发送请求
+			
 			registerForm = new FormData(registerFormEle);
-			console.log(registerFormEle.account.value);
-			//debugger;
-		    //var username = document.getElementById("username").value;
-		    //var password = document.getElementById("password").value;
-		    //loginForm.append("name",username);
-		    //loginForm.append("pass",password);
+			registerForm.append("test","testText");
 		    var result=registerRequest(registerForm,"http://localhost:8080/Erudite/Register","POST");//发送注册请求
-		    
-		    debugger;
+		    console.log(result);
 		    var resObj=eval('['+result+']');
-		    if(typeof(resObj == 'object')){
+		    if(resObj != 'undefined'){
+		    		resObj=resObj[0];
 					if (resObj.suc==1 && resObj.err == 0) {//注册成功
 						console.log("register success");
-						location.reload();//页面刷新，跳转到login
+						alert("注册成功");
+						setTimeout(location.href="/Erudite/WebPages/person.jsp",1000);
+//						location.href="/Erudite/WebPages/person.jsp";//页面刷新，跳转到login
 					}else console.log("register failed");
 			}
 		}

@@ -1,6 +1,8 @@
 package com.zzxy.NetDict.API;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -8,7 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zzxy.NetDict.Service.AccountManage;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.zzxy.NetDict.Service.AccountManageService;
 import com.zzxy.NetDict.Tools.JsonData;
 import com.zzxy.NetDict.Tools.SendJsonData;
 
@@ -43,13 +48,13 @@ public class Register extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    super.service(req, resp);
 	    
-    	Map<String,String[]> map = req.getParameterMap();
     	
-    	System.out.println(map);
 	    
-	    AccountManage am = new AccountManage();
+	    Map<String,String> params = FormDataDecode.formDataDecode(req);
+
+	    AccountManageService am = new AccountManageService();
 	    
-	    int rt = am.userRegist(req);
+	    int rt = am.userRegist(params);
 	    
 	    JsonData jd = new JsonData();
 	

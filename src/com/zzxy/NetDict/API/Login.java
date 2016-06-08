@@ -1,6 +1,8 @@
 package com.zzxy.NetDict.API;
 
 import java.io.IOException;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.zzxy.NetDict.Entity.User;
-import com.zzxy.NetDict.Service.AccountManage;
+import com.zzxy.NetDict.Service.AccountManageService;
 import com.zzxy.NetDict.Tools.JsonData;
 import com.zzxy.NetDict.Tools.SendJsonData;
 
@@ -47,8 +49,10 @@ public class Login extends HttpServlet {
 	    
 	   HttpSession session = req.getSession();
 	    
-	   AccountManage am = new AccountManage();
-	    
+	   AccountManageService am = new AccountManageService();
+	   
+	   
+	   
 	   User user = am.userLogin(req);
 	    
 	   if(user != null)
