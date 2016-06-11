@@ -12,7 +12,7 @@
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
     <script src="sources/script/upload/upload.js"></script>
 </head>
-<body>
+<body style="background-color: #d35657">
 <nav class="cd-side-navigation">
   <ul>
     <li> <a href="#0" data-menu="index"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
@@ -39,17 +39,16 @@
       </svg> 个人 </a> </li>
     <li> <a href="#0" data-menu="search"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
       <g transform="translate(0, 0)">
-       <circle cx="10" cy="10" r="9" data-color="color-2" stroke="#4a5261" stroke-width="2" fill="none" />
-        <line y1="23" y2="18" x2="17" x1="22" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
+        <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points=" 19,7 12,14 5,7 " stroke-linejoin="miter"></polyline>
+        <rect x="1" y="3" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" width="22" height="18" stroke-linejoin="miter"></rect>
+        <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="7" y1="15" x2="5" y2="17" stroke-linejoin="miter"></line>
+        <line data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="17" y1="15" x2="19" y2="17" stroke-linejoin="miter"></line>
       </g>
       </svg> </svg> 搜索 </a> </li>
     <li> <a href="#0" data-menu="upload"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
       <g transform="translate(0, 0)">
-        <polyline points=" 19,7 12,0 5,7 " data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" stroke-linejoin="miter"></polyline>
-        <line y1="10" y2="20" x2="1" x1="1" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
-        <line y1="10" y2="20" x1="23" x2="23" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
-        <line x1="1" y1="20" y2="20" x2="23" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
-        <line y2="20" x1="12" y1="0" stroke-miterlimit="10" x2="12" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
+     <circle cx="10" cy="10" r="9" data-color="color-2" stroke="#4a5261" stroke-width="2" fill="none" />
+        <line y1="23" y2="18" x2="17" x1="22" stroke-miterlimit="10" data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></line>
       </g>
     </svg> </svg> 上传 </a> </li>
   </ul>
@@ -58,90 +57,23 @@
 
 <main class="cd-main">
   <section class="cd-section view visible">
-    <header>
-    <div class="slogan">看最新的热度排行</div>
-    <div class="hot">
-      <div class="top" id="top1">
-        <a><li style="text-align: center;">总排行</li></a> 
-        <a><li>1. 文件名.txt</li></a> 
-        <a><li>2. 文件名.mp3</li></a> 
-        <a><li>3. 文件名.mp4</li></a> 
-        <a><li>4. 文件名.jsp</li></a> 
-        <a><li>5. 文件名.heml</li></a> 
-        <a><li>6. 文件名.pptx</li></a> 
-        <a><li>7. 文件名.pdf</li></a> 
-        <a><li>8. 文件名.rm</li></a> 
-        <a><li>9. 文件名.png</li></a> 
-        <a><li>10. 文件名.png</li></a> 
-      </div>
-      <div class="top">
-        <a><li style="text-align: center;">教育教学</li></a> 
-        <a><li>1. 文件名.txt</li></a> 
-        <a><li>2. 文件名.mp3</li></a> 
-        <a><li>3. 文件名.mp4</li></a> 
-        <a><li>4. 文件名.jsp</li></a> 
-        <a><li>5. 文件名.heml</li></a> 
-        <a><li>6. 文件名.pptx</li></a> 
-        <a><li>7. 文件名.pdf</li></a> 
-        <a><li>8. 文件名.rm</li></a> 
-        <a><li>9. 文件名.png</li></a> 
-        <a><li>10. 文件名.png</li></a> 
-      </div>
-      <div class="top">
-        <a><li style="text-align: center;">专业资料</li></a> 
-        <a><li>1. 文件名.txt</li></a> 
-        <a><li>2. 文件名.mp3</li></a> 
-        <a><li>3. 文件名.mp4</li></a> 
-        <a><li>4. 文件名.jsp</li></a> 
-        <a><li>5. 文件名.heml</li></a> 
-        <a><li>6. 文件名.pptx</li></a> 
-        <a><li>7. 文件名.pdf</li></a> 
-        <a><li>8. 文件名.rm</li></a> 
-        <a><li>9. 文件名.png</li></a> 
-        <a><li>10. 文件名.png</li></a> 
-      </div>
-      <div class="top">
-        <a><li style="text-align: center;">实用文档</li></a> 
-        <a><li>1. 文件名.txt</li></a> 
-        <a><li>2. 文件名.mp3</li></a> 
-        <a><li>3. 文件名.mp4</li></a> 
-        <a><li>4. 文件名.jsp</li></a> 
-        <a><li>5. 文件名.heml</li></a> 
-        <a><li>6. 文件名.pptx</li></a> 
-        <a><li>7. 文件名.pdf</li></a> 
-        <a><li>8. 文件名.rm</li></a> 
-        <a><li>9. 文件名.png</li></a> 
-        <a><li>10. 文件名.png</li></a> 
-      </div>
-        <div class="top">
-        <a><li style="text-align: center;">资格考试</li></a> 
-        <a><li>1. 文件名.txt</li></a> 
-        <a><li>2. 文件名.mp3</li></a> 
-        <a><li>3. 文件名.mp4</li></a> 
-        <a><li>4. 文件名.jsp</li></a> 
-        <a><li>5. 文件名.heml</li></a> 
-        <a><li>6. 文件名.pptx</li></a> 
-        <a><li>7. 文件名.pdf</li></a> 
-        <a><li>8. 文件名.rm</li></a> 
-        <a><li>9. 文件名.png</li></a> 
-        <a><li>10. 文件名.png</li></a> 
-      </div>
-      <div class="top">
-        <a><li style="text-align: center;">生活休闲</li></a> 
-        <a><li>1. 文件名.txt</li></a> 
-        <a><li>2. 文件名.mp3</li></a> 
-        <a><li>3. 文件名.mp4</li></a> 
-        <a><li>4. 文件名.jsp</li></a> 
-        <a><li>5. 文件名.heml</li></a> 
-        <a><li>6. 文件名.pptx</li></a> 
-        <a><li>7. 文件名.pdf</li></a> 
-        <a><li>8. 文件名.rm</li></a> 
-        <a><li>9. 文件名.png</li></a>
-        <a><li>10. 文件名.png</li></a>  
-      </div>
+    <div id="fileViewBox">
+		<iframe src="http://www.shangxin.link/ss/code.php"></iframe>
+     </div>
+    <div class="relation">
+    文档关联<br><br>这就是文档关联
+      过几天就有了<br>
+      再等会  
+
     </div>
-    </header>
-    <!-- .cd-content --> 
+      </div>
+</div>
+
+
+
+
+
+      </div>
   </section>
   <!-- .cd-section --> 
 </main>
@@ -151,9 +83,10 @@
 <!-- lateral loading bar -->
 <script src="sources/script/common/jquery-2.1.4.js"></script>
 <script src="sources/script/common/velocity.min.js"></script>
-<script src="sources/script/common/func.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
+<script src="sources/script/file/viewFile.js"></script>
 <script src="sources/script/person/login.js"></script>
 <script src="sources/script/upload/dropUpload.js"></script>
+<script type='text/javascript' src='sources/script/common/jquery.particleground.min.js'></script>
 </body>
 </html>

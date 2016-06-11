@@ -28,7 +28,7 @@ public class FileManageDaoImpl implements FileManageDao {
 	public List<NDFile> getFileListById(String folderId) {
 		List<NDFile> list = new ArrayList<>();
 		String searchSql = "SELECT f_id,f_name,f_type,f_size,real_path,html_path,thumb_path,descrp,clicks "
-				+ " FROM files WHERE fd_id = ? AND delete_flag = 0";
+				+ " FROM files WHERE fd_id = ? AND delete_flag = 0 ORDER BY clicks DESC";
 		
 		ResultSet rs = db.executeQueryRS(searchSql, new String[]{folderId});
 		try{
