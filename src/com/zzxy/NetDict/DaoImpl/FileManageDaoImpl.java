@@ -9,6 +9,8 @@ import java.util.Map;
 import com.zzxy.NetDict.DB.DBBase;
 import com.zzxy.NetDict.Dao.FileManageDao;
 import com.zzxy.NetDict.Entity.NDFile;
+import com.zzxy.NetDict.Entity.User;
+import com.zzxy.NetDict.Tools.StringUtils;
 
 public class FileManageDaoImpl implements FileManageDao {
 
@@ -28,7 +30,7 @@ public class FileManageDaoImpl implements FileManageDao {
 	public List<NDFile> getFileListById(String folderId) {
 		List<NDFile> list = new ArrayList<>();
 		String searchSql = "SELECT f_id,f_name,f_type,f_size,real_path,html_path,thumb_path,descrp,clicks "
-				+ " FROM files WHERE fd_id = ? AND delete_flag = 0 ORDER BY clicks DESC";
+				+ " FROM files WHERE fd_id = ? AND delete_flag = 0";
 		
 		ResultSet rs = db.executeQueryRS(searchSql, new String[]{folderId});
 		try{
@@ -149,6 +151,97 @@ public class FileManageDaoImpl implements FileManageDao {
 		int rt = db.saveOrUpdate(sql, id);
 		return rt;
 	}
+
+//	@Override
+	public List<NDFile> getUserUploadedFileList(com.zzxy.NetDict.Entity.User user) {
+		
+		List<NDFile> list = new ArrayList<>();
+
+		String sql = "SELECT f_id,f_name,f_type,f_size,real_path,html_path,thumb_path,descrp,fd_id,clicks FROM files "
+				+ " WHERE owner = ? AND delete_flag = 0";
+		
+		String account = user.getAccount();
+		
+		ResultSet rs = db.executeQueryRS(sql, new String[]{account});
+		
+		try{
+
+			while(rs.next())
+			{
+				NDFile file = new NDFile();
+				file.setF_id(rs.getString("f_id"));
+				file.setF_name(rs.getString("f_name"));
+				file.setF_type(rs.getInt("f_type"));
+				file.setF_size(rs.getDouble("f_size"));
+				file.setReal_path(rs.getString("real_path"));
+				file.setHtml_path(rs.getString("html_path"));
+				file.setThumb_path(rs.getString("thumb_path"));
+				file.setDescrp(rs.getString("descrp"));
+				file.setFd_id(rs.getString("fd_id"));
+				file.setClicks(rs.getDouble("clicks"));
+				list.add(file);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+			
+		return list;
+	}
+
+//	@Override
+	public int userCollection(String fId, User user) {
+
+		String sql = "INSERT INTO user_collection(f_id,user,modified,modifier) VALUES(?,?,?,?)";
+		String account = user.getAccount();
+		String modified = StringUtils.getNowToString();
+		
+		int rt = db.saveOrUpdate(sql, fId,account,modified,account);
+		
+		return rt;
+	}
+
+//	@Override
+	public int userDelCollection(String fId, User user) {
+		
+		String sql = "UPDATE user_collection SET delete_flag = 1 WHERE user = ? AND f_id = ?";
+		
+		String account = user.getAccount();
+		
+		int rt = db.saveOrUpdate(sql, account,fId);
+		
+		return rt;
+	}
+
+//	@Override
+	public List<NDFile> getUserCollection(User user) {
+		
+		List<NDFile> list = new ArrayList<>();
+		
+		String account = user.getAccount();
+		
+		String sql = "SELECT f_id FROM user_collection WHERE user = ? AND delete_flag = 0";
+		
+		ResultSet rs = db.executeQueryRS(sql, new String[]{account});
+		
+		try{
+			while(rs.next())
+			{
+				NDFile file = new NDFile();
+				file = getFileById(rs.getString("f_id"));
+				list.add(file);
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return file;
+	}
+
+
+
 
     
 }

@@ -41,7 +41,7 @@ public class FolderManageDaoImpl implements FolderManageDao {
 	public List<Folder> getBaseFolders() {
 		
 		List<Folder> list = new ArrayList<>();
-		String searchSql = "SELECT fd_id,fd_name FROM folder WHERE fd_super = 'base' AND delete_flag = 0";
+		String searchSql = "SELECT fd_id,fd_name FROM folders WHERE fd_super = 'base' AND delete_flag = 0";
 		ResultSet rs =db.executeQueryRS(searchSql, new String[]{});
 		try{
 			while(rs.next())		

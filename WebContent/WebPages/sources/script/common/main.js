@@ -134,6 +134,7 @@ jQuery(document).ready(function($){
 				switch(newSection){
 					case "index": 
 						showAnim();
+						getFolders();
 						break;
 					case "upload":
 						dropUpload();

@@ -57,19 +57,9 @@
 <!-- .cd-side-navigation -->
 <main class="cd-main">
   <section class="cd-section search visible">
-      <div id="result" >
-      <div>关于“1”的结果</div>
-      <div class="resultShow">
-        <div class="fileIcon">
-        </div>
-        <div class="fileName">
-          1.txt 
-        </div>
-         <div class="fileDescribe">
-          描述：这是描述可能很长很长很长很长很长很长很长很长很长很长很长很长很长很长
-        </div>
-      </div>
-    </div>
+	<div id="result" >
+		结果加载中...
+	</div>
   </section>
   <!-- .cd-section --> 
 </main>
@@ -80,7 +70,8 @@
 <script src="sources/script/common/jquery-2.1.4.js"></script>
 <script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
-<script src="sources/script/typeresult/typeResult.js"></script>
+<script src="sources/script/common/func.js"></script><!-- 通用函数库 -->
+<script src="sources/script/typeresult/typeresult.js"></script>
 <script src="sources/script/person/login.js"></script>
 <script src="sources/script/upload/dropUpload.js"></script>
 </body>
