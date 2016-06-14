@@ -152,7 +152,7 @@ public class FileManageDaoImpl implements FileManageDao {
 		return rt;
 	}
 
-//	@Override
+	@Override
 	public List<NDFile> getUserUploadedFileList(com.zzxy.NetDict.Entity.User user) {
 		
 		List<NDFile> list = new ArrayList<>();
@@ -189,7 +189,7 @@ public class FileManageDaoImpl implements FileManageDao {
 		return list;
 	}
 
-//	@Override
+	@Override
 	public int userCollection(String fId, User user) {
 
 		String sql = "INSERT INTO user_collection(f_id,user,modified,modifier) VALUES(?,?,?,?)";
@@ -201,7 +201,7 @@ public class FileManageDaoImpl implements FileManageDao {
 		return rt;
 	}
 
-//	@Override
+	@Override
 	public int userDelCollection(String fId, User user) {
 		
 		String sql = "UPDATE user_collection SET delete_flag = 1 WHERE user = ? AND f_id = ?";
@@ -213,7 +213,7 @@ public class FileManageDaoImpl implements FileManageDao {
 		return rt;
 	}
 
-//	@Override
+	@Override
 	public List<NDFile> getUserCollection(User user) {
 		
 		List<NDFile> list = new ArrayList<>();
@@ -237,7 +237,7 @@ public class FileManageDaoImpl implements FileManageDao {
 			e.printStackTrace();
 		}
 		
-		return file;
+		return list;
 	}
 
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.zzxy.NetDict.Entity.NDFile;
+import com.zzxy.NetDict.Entity.User;
 
 public interface FileManageDao {
     
@@ -63,5 +64,34 @@ public interface FileManageDao {
      * @return 操作结果，正数成功，0 失败,-1:UNIQUE键的值重复
      */
     public int updateFileClicks(String id);
+    
+    /**
+     * 获取用户上传的文件列表
+     * @param user当前登录的用户
+     * @return List<NDFile>
+     */
+    public List<NDFile> getUserUploadedFileList(User user);
+    
+    /**
+     * 用户收藏
+     * @param fId
+     * @return 操作结果，正数成功，0 失败,-1:UNIQUE键的值重复
+     */ 
+    public int userCollection(String fId,User user);
+    
+    /**
+     * 用户取消收藏
+     * @param fId
+     * @return 操作结果，正数成功，0 失败,-1:UNIQUE键的值重复
+     */ 
+    public int userDelCollection(String fId,User user);
+    
+    /**
+     * 获取用户收藏列表
+     * @param user
+     * @return
+     */
+    public List<NDFile> getUserCollection(User user);
+    
     
 }
