@@ -7,7 +7,7 @@ var baseFolders;
  * 
  */
 function getFoldersById(id){
-	childFoldersObj = JSONRequest("http://localhost:8080/Erudite/GetFoldersById?fdId="+id, "GET");
+	childFoldersObj = JSONRequest(EruditeHost + "Erudite/GetFoldersById?fdId="+id, "GET");
 //	console.log(childFoldersObj);
 	return childFoldersObj;
 }
@@ -15,7 +15,7 @@ function getFoldersById(id){
  * 获取根一级（根）目录
  */
 function getFolders(){
-	foldersObj = JSONRequest("http://localhost:8080/Erudite/GetFolders", "GET");
+	foldersObj = JSONRequest(EruditeHost + "Erudite/GetFolders", "GET");
 	if(foldersObj.err != "0"){
 		console.log("Root Folders Request failed!");
 		return 0;
@@ -54,7 +54,7 @@ function getChildFolders(){
 }
 
 function toFileListPage(id) {//跳转到文件列表页
-	window.location.href='http://localhost:8080/Erudite/WebPages/typeResult.jsp?typeId='+id;
+	window.location.href=EruditeHost + 'Erudite/WebPages/typeResult.jsp?typeId='+id;
 }
 
 function addChildFolderClick(){//绑定子分类点击跳转事件

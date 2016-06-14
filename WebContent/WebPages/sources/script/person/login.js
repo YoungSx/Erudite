@@ -23,7 +23,7 @@ function login(){
 //	    var password = document.getElementById("password").value;
 	    var loginForm = document.getElementById("loginForm");
 	    loginForm = new FormData(loginForm);
-	    var result=loginRequest(loginForm,"http://localhost:8080/Erudite/Login","POST");//发送登陆请求
+	    var result=loginRequest(loginForm,EruditeHost + "Erudite/Login","POST");//发送登陆请求
 	    
 	    var User;
 	    var resObj=eval('['+result+']');

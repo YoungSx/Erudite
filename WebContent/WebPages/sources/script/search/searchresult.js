@@ -1,7 +1,7 @@
 
 // 文件预览功能
 function viewFile(fileId, transitionPath) {// 未完成
-	window.location.href = "http://localhost:8080/Erudite/WebPages/view.jsp?transitionPath="
+	window.location.href = EruditeHost + "Erudite/WebPages/view.jsp?transitionPath="
 			+ transitionPath;
 	// console.log("跳转完毕");
 }

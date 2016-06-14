@@ -5,5 +5,5 @@ function logout(){
 	    lReq.send();
 	    return lReq.responseText;
 	}
-    registerRequest("http://localhost:8080/Erudite/logout","GET");//发送注销请求
+    registerRequest(EruditeHost + "Erudite/logout","GET");//发送注销请求
 }

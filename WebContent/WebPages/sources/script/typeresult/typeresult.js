@@ -1,7 +1,7 @@
 
 // 文件预览功能
 function viewFile(fileId, transitionPath) {// 未完成
-	window.location.href = "http://localhost:8080/Erudite/WebPages/view.jsp?transitionPath="+ transitionPath;
+	window.location.href = EruditeHost + "Erudite/WebPages/view.jsp?transitionPath="+ transitionPath;
 }
 
 function dlFile(realPath) {// 未完成
@@ -23,8 +23,7 @@ function getFile(rsEle) {
 
 // 显示文件列表页
 function veiwFileListPage(id) {
-	var resObj = JSONRequest(
-			"http://localhost:8080/Erudite/GetFileListById?fdId=" + id, "GET");
+	var resObj = JSONRequest(EruditeHost + "Erudite/GetFileListById?fdId=" + id, "GET");
 	var resultShow = "";
 	if (resObj == false) {
 		console.log("get faled");

@@ -67,7 +67,7 @@ function submitFile(files){
     oReq.addEventListener("abort",uploadCanceled,false);
     oReq.addEventListener("loadend",uploadEnd,false);
 
-    oReq.open("POST","http://localhost:8080/Erudite/FileUpload");//目标文件
+    oReq.open("POST",EruditeHost + "Erudite/FileUpload");//目标文件
     oReq.send(uploadForm);
 }
 function uploadProgress(event){

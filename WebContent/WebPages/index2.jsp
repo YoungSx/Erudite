@@ -6,6 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" class="no-js">
 <head>
+    <title>博学者</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="sources/style/common/reset.css">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="sources/style/common/style.css">
     <!-- Resource style -->
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
-    <script src="sources/script/upload/upload.js"></script>
+    <script src="sources/script/common/config.js"></script><!-- 配置 -->
 
 </head>
 <body>
