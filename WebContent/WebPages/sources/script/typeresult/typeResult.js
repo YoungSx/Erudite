@@ -1,23 +1,21 @@
 
 // 文件预览功能
 function viewFile(fileId, transitionPath) {// 未完成
-	window.location.href = "http://localhost:8080/Erudite/WebPages/view.jsp?transitionPath="
-			+ transitionPath;
-	// console.log("跳转完毕");
+	window.location.href = "http://localhost:8080/Erudite/WebPages/view.jsp?transitionPath="+ transitionPath;
 }
 
 function dlFile(realPath) {// 未完成
-	
-	window.location.href = realPath ;// 跳不动
+	window.location.href = realPath ;
 }
 
 function getFile(rsEle) {
-	if (rsEle.transitionPath != undefined) { // 有路径，代表能预览，执行预览
+	console.log(rsEle);
+	if (rsEle.getAttribute("transitionpath") != "") { // 有路径，代表能预览，执行预览
 		console.log("预览文件");
-		viewFile(rsEle.id, rsEle.transitionPath);
+		viewFile(rsEle.id, rsEle.getAttribute("transitionpath"));
 	} else {// 没有路径，不能预览，执行下载
 		console.log("下载文件");
-		dlFile(this.realPath);
+		dlFile(rsEle.getAttribute("realpath"));
 	}
 }
 
@@ -44,8 +42,8 @@ function veiwFileListPage(id) {
 			var transitionPath = "";
 			if ("html_path" in resObj.data[i])
 				transitionPath = resObj.data[i].html_path;
-			resultShow += "<div class='resultShow' realPath=" + realPath +
-					"transitionPath='" + transitionPath + "' id='" + id
+			resultShow += "<div class='resultShow' realPath='" + realPath +
+					"' transitionPath='" + transitionPath + "' id='" + id
 					+ "' onClick='getFile(this)'>" + // 绑定点击事件，查看文件详情
 					"<div class='fileIcon' ><img src='" + IconUrl + "'></div>"
 					+ "<div class='fileName'> " + fileName + " </div>"

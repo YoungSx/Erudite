@@ -1,7 +1,7 @@
 
 function viewFile(fileId,transitionPath) {// 未完成
-	var fileViewBox = document.getElementById("result");//("fileViewBox");
-	fileViewBox.innerHTML="";
+	var fileViewBox = document.getElementById("fileViewBox");
+	debugger;
 	var fileViewIframe = document.createElement("iframe");//增加一个iframe
 	fileViewIframe.setAttribute("src",transitionPath);
 	fileViewBox.appendChild(fileViewIframe);
@@ -9,6 +9,7 @@ function viewFile(fileId,transitionPath) {// 未完成
 
 document.body.onload = function() {
 	var fileId="",transitionPath="";
+	debugger;
 	fileId = getQueryString("fileId");
 	transitionPath = getQueryString("transitionPath");
 	

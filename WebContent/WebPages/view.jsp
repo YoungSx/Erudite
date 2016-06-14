@@ -20,7 +20,7 @@
         <polygon fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="12,2 3,10 3,23 9,23 9,16 15,16 15,23 21,23 21,10 " stroke-linejoin="miter"></polygon>
       </g>
       </svg> 探索 </a> </li>
-    <li> <a class="selected" href="view.jsp"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+    <li> <a class="selected" href="hot.jsp"> <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
       <g transform="translate(0, 0)">
         <polyline data-color="color-2" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points=" 16,7 16,2 8,2 8,7 " stroke-linejoin="miter"></polyline>
         <rect x="1" y="7" fill="none" stroke="#4a5261" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" width="22" height="15" stroke-linejoin="miter"></rect>
@@ -59,7 +59,7 @@
 <main class="cd-main">
   <section class="cd-section view visible">
     <div id="fileViewBox">
-		<iframe src="http://www.shangxin.link/ss/code.php"></iframe>
+		<!-- <iframe src=""></iframe> -->
      </div>
     <div class="relation">
     文档关联<br><br>这就是文档关联
@@ -82,6 +82,6 @@
 <script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
 <script src="sources/script/common/func.js"></script><!-- 通用函数库 -->
-<script src="sources/script/file/viewFile.js"></script>
+<script src="sources/script/file/viewfile.js"></script>
 </body>
 </html>
