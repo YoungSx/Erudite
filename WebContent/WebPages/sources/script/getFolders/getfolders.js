@@ -1,4 +1,5 @@
 
+var baseFolders;
 /*
  * 获取二级（子）目录
  * 
@@ -6,8 +7,9 @@
  * 
  */
 function getFoldersById(id){
-	sonFoldersObj = JSONRequest("http://localhost:8080/Erudite/GetFoldersById?fdId="+id, "GET");
-	console.log(sonFoldersObj);
+	childFoldersObj = JSONRequest("http://localhost:8080/Erudite/GetFoldersById?fdId="+id, "GET");
+	console.log(childFoldersObj);
+	return childFoldersObj;
 }
 /*
  * 获取根一级（根）目录
@@ -19,35 +21,71 @@ function getFolders(){
 		return 0;
 	}else{
 		foldersObj = foldersObj.data;
+		baseFolders = foldersObj;//保存以便以后用
 	}
-	
-	for(var key in foldersObj){
-		console.log("子分类：");
-		var sonFolders = getFoldersById(foldersObj[key].fd_id).data;
-		if(sonFolders.length != 0){
-//			遍历子分类
-			
-			
-		}
+//	遍历Base分类获取子分类
+	for(var key in baseFolders){
+		
+		document.write("<a href='#" + baseFolders[key].fd_id + "' class='btn'>" + baseFolders[key].fd_name + '</a>');
+
 	}
-	console.log(foldersObj);
+	console.log(baseFolders);
 }
 
-//getFolders();//执行获取目录操作
+function getChildFolders(){
+	for(var key in baseFolders){
+		document.write("<div class='detailed' id='" + baseFolders[key].fd_id + "'>");
+		document.write("<div id='p2'>" + baseFolders[key].fd_name + "</div>");
+		var childFolders = getFoldersById(baseFolders[key].fd_id);
+		
+		childFolders = childFolders.data;
+		if(childFolders.length != 0){
+//			遍历子分类
+			
+			for(var key2 in baseFolders){
+				
+				document.write("<div class='detailedList' id='" + childFolders[key2].fd_id + "'><a href='#'>" + childFolders[key2].fd_name + "</a></div>");
+				
+				
+				
+			}
+			
+			
+			/*
+			 *     <div class="detailed" id="education">
+    <div id="p2">教育教学</div>
+      <div class="detailedList"><a href="#">幼儿教育</a></div>
+      <div class="detailedList"><a href="#">小学教育</a></div>
+      <div class="detailedList"><a href="#">初中教育</a></div>
+      <div class="detailedList"><a href="#">高中教育</a></div>
+      <div class="detailedList"><a href="#">职业教育</a></div>
+      <div class="detailedList"><a href="#">成人教育</a></div>
+      <div class="detailedList"><a href="#">文库题库</a></div>
+      <div class="detailedList"><a href="#">高等教育</a></div>
+    </div>
+			 */
+			
+		}
+		
+		document.write("</div>");
+	}
+}
 
 
 
-function toFileListPage(id) {//跳转到文件列表页 待定
+function toFileListPage(id) {//跳转到文件列表页
 	window.location.href='http://localhost:8080/Erudite/WebPages/typeResult.jsp?typeId='+id;
 }
 
-var detailedList = document.getElementsByClassName("detailedList");
+function addChildFolderClick(){//绑定子分类点击跳转事件
+	var detailedList = document.getElementsByClassName("detailedList");
 
-//子分类绑定点击跳转事件
-for (var i = 0; i < detailedList.length; i++) {
-	detailedList[i].addEventListener("click", function() {
-		this.typename="123";
-		var typeName = this.typename;
-		toFileListPage(typeName.id);
-	});
+	//子分类绑定点击跳转事件
+	for (var i = 0; i < detailedList.length; i++) {
+		detailedList[i].addEventListener("click", function() {
+			
+			toFileListPage(typeName.id);
+		});
+	}
 }
+//getFolders();//执行获取目录操作

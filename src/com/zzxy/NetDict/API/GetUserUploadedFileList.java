@@ -14,6 +14,7 @@ import com.zzxy.NetDict.DaoImpl.FileManageDaoImpl;
 import com.zzxy.NetDict.Entity.NDFile;
 import com.zzxy.NetDict.Entity.User;
 import com.zzxy.NetDict.Tools.JsonData;
+import com.zzxy.NetDict.Tools.SendJsonData;
 
 /**
  * Servlet implementation class GetUserUploadedFileList
@@ -56,6 +57,9 @@ public class GetUserUploadedFileList extends HttpServlet {
 		if(user == null)
 		{
 			//提示登录
+			//指引用户登录
+        	resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
 			return ;
 		}
 		
@@ -70,7 +74,7 @@ public class GetUserUploadedFileList extends HttpServlet {
 		jd.setSuc(1);
 		jd.setErr(0);
 		
-		
+		SendJsonData.SendJson(resp, jd);
 		
 	}
 	

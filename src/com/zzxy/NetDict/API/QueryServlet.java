@@ -43,6 +43,8 @@ public class QueryServlet extends HttpServlet {
 	}
 	
 	
+	
+	//request需要提交的表单： queryStr:用户查询关键字，qf:查询域（‘1’为name，用户选择搜索文件时用此值；’2‘为content，用户选择搜索文档时使用此值）
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		super.service(req, resp);

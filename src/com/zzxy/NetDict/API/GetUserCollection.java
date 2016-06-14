@@ -60,6 +60,9 @@ public class GetUserCollection extends HttpServlet {
 		if(user == null)
 		{
 			//提示登录
+			//指引用户登录
+        	resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
 			return;
 		}
 		

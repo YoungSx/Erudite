@@ -44,6 +44,9 @@ public class AdminRePwd extends HttpServlet {
 		doGet(request, response);
 	}
 	
+	
+	
+	//request表单需要提交的参数：   account:要更改密码的账户，pwd:要更改的密码
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -57,6 +60,9 @@ public class AdminRePwd extends HttpServlet {
 		if(user == null)
 		{
 //			提示登录
+			//指引用户登录
+        	resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
 			return;
 		}
 		
@@ -65,6 +71,8 @@ public class AdminRePwd extends HttpServlet {
 		if(rt != 0)
 		{
 			//没有权限
+			resp.getWriter().write("<script>alert('您没有权限！');window.location.href='/Erudite/WebPages/index.jsp';</script>");
+        	resp.getWriter().flush();
 			return;
 		}
 		

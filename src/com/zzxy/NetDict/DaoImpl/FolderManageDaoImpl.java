@@ -17,7 +17,7 @@ public class FolderManageDaoImpl implements FolderManageDao {
 	@Override
 	public List<Folder> getChildFoldersBySuperId(String superFolderId) {
 		List<Folder> list = new ArrayList<>();
-		String searchSql = "SELECT fd_id,fd_name FROM folder WHERE fd_super = ? AND delete_flag = 0";
+		String searchSql = "SELECT fd_id,fd_name FROM folders WHERE fd_super = ? AND delete_flag = 0";
 		ResultSet rs =db.executeQueryRS(searchSql, new String[]{superFolderId});
 		try{
 			while(rs.next())		

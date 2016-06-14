@@ -51,6 +51,8 @@ public class GetConfigs extends HttpServlet {
 		if(user == null)
 		{
 //			提示登录
+			resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
 			return;
 		}
 		
@@ -59,6 +61,8 @@ public class GetConfigs extends HttpServlet {
 		if(rt != 0)
 		{
 			//没有权限
+			resp.getWriter().write("<script>alert('您没有权限！');window.location.href='/Erudite/WebPages/index.jsp';</script>");
+        	resp.getWriter().flush();
 			return;
 		}
 		

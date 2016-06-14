@@ -1,6 +1,8 @@
 package com.zzxy.NetDict.API;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zzxy.NetDict.Dao.FolderManageDao;
 import com.zzxy.NetDict.DaoImpl.FolderManageDaoImpl;
+import com.zzxy.NetDict.Entity.Folder;
 import com.zzxy.NetDict.Tools.JsonData;
 import com.zzxy.NetDict.Tools.SendJsonData;
 
@@ -41,6 +44,9 @@ public class GetFoldersById extends HttpServlet {
 		doGet(request, response);
 	}
 	
+	
+	
+	//request需要提交的表单： fdId:目标文件夹id
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub

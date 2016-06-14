@@ -43,6 +43,9 @@ public class Login extends HttpServlet {
 		doGet(request, response);
 	}
 	
+	
+	
+	//request需要提交的表单：   account:用户名，pass：密码
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    super.service(req, resp);
@@ -70,11 +73,12 @@ public class Login extends HttpServlet {
 	   }
 	   else
 	   {
-		   SendJsonData.SendJson(resp, "登录失败");
 		   JsonData jd = new JsonData();
 	       
 	       jd.setSuc(0);
 	       jd.setErr(0);
+	       
+	       SendJsonData.SendJson(resp, "登录失败");
 	       
 	       
 	       //TODO 登录失败后的处理

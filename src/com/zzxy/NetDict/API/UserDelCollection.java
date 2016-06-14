@@ -45,6 +45,8 @@ public class UserDelCollection extends HttpServlet {
 	}
 	
 	
+	//request表单需要提交的参数：   fId:文件的fId
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -56,6 +58,9 @@ public class UserDelCollection extends HttpServlet {
 		if(user == null)
 		{
 			//提示登录
+			//指引用户登录
+        	resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
 			return ;
 		}
 		

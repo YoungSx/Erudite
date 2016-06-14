@@ -44,11 +44,10 @@ public class Register extends HttpServlet {
 	}
 	
 	
+	//request需要提交的表单为：account:用户账号，pass：用户密码，email:用户邮箱，nickName:用户昵称
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    super.service(req, resp);
-	    
-    	
 	    
 	    Map<String,String> params = FormDataDecode.formDataDecode(req);
 

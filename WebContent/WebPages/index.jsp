@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="sources/style/common/style.css">
     <!-- Resource style -->
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
-    <script src="sources/script/upload/upload.js"></script>
-
+    <script src="sources/script/common/func.js"></script><!-- 通用函数库 -->
+	<script src="sources/script/getFolders/getfolders.js"></script><!-- 先获取所有分类，存起来 -->
 </head>
 <body>
 <div class="cd-side-navigation">
@@ -68,16 +68,19 @@
 
       <div class="slogan">探索全世界的智慧</div>
       <div class="classification">
-        <a href="#education" class="btn">教育教学</a>
-        <a href="#professional" class="btn">专业资料</a>
-        <a href="#utility" class="btn">实用文档</a>
-        <a href="#examination" class="btn">资格考试</a>
-        <a href="#leisureife" class="btn">生活休闲</a>
+        <script type="text/javascript">
+        	//此处遍历所有base分类
+        	getFolders();
+        </script>
       </div>
       <div id="particles"> </div>
     </header>
 
-
+	
+	<script type="text/javascript">
+		getChildFolders();
+	</script>
+	<!-- 
     <div class="detailed" id="education">
     <div id="p2">教育教学</div>
       <div class="detailedList"><a href="#">幼儿教育</a></div>
@@ -134,6 +137,7 @@
       <div class="detailedList"><a href="#">随笔</a></div>
       <div class="detailedList"><a href="#">幽默滑稽</a></div>
     </div>
+    -->
     <!-- .cd-content --> 
   </section>
   <!-- .cd-section --> 
@@ -145,7 +149,5 @@
 <script src="sources/script/common/jquery-2.1.4.js"></script>
 <script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
-<script src="sources/script/common/func.js"></script><!-- 通用函数库 -->
-<script src="sources/script/getFolders/getfolders.js"></script>
 </body>
 </html>

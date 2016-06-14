@@ -48,13 +48,17 @@ import com.zzxy.NetDict.Tools.StringUtils;
             System.out.println("文件存放目录、临时文件目录准备完毕 ..."+filePath+"- - - -"+tempPath);  
         }  
           
+        
+        
+        
+      //request需要提交的表单：   descrp：文件描述 ，fdId:目标文件夹id
         // doPost  
         public void doPost(HttpServletRequest req, HttpServletResponse res)  
             throws IOException, ServletException  
         {  
      
         	
-            System.out.println("文件上传："+getClass());
+//            System.out.println("文件上传："+getClass());
             
             PrintWriter pw = res.getWriter();  
             
@@ -64,18 +68,18 @@ import com.zzxy.NetDict.Tools.StringUtils;
             //获取session并获取user对象，确定用户是否登录
             HttpSession session = req.getSession();
             User user = (User)session.getAttribute("user");
-//            if(user == null)
-//            {
-//            	//指引用户登录
-//            	res.getWriter().write("<script>alert('请登录后上传文件！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
-//            	res.getWriter().flush();
-//            	return ;
-//            }
-//            String userName = user.getAccount();
+            if(user == null)
+            {
+            	//指引用户登录
+            	res.getWriter().write("<script>alert('请登录后上传文件！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+            	res.getWriter().flush();
+            	return ;
+            }
+            String account = user.getAccount();
             
             //获取userAccount并put进fieldMap
             //TODO:
-            fieldMap.put("userAccount", "account");
+            fieldMap.put("userAccount", account);
             
             
           //允许跨源请求   
@@ -127,7 +131,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
         {  
             String name = item.getFieldName();  
             String value = item.getString();    
-            System.out.println("field === "+ name +"     "+value);
+//            System.out.println("field === "+ name +"     "+value);
             fieldMap.put(name, value);
         }  
           
@@ -143,7 +147,9 @@ import com.zzxy.NetDict.Tools.StringUtils;
             
             System.out.println("完整的文件名：" + filename); 
             
-            String fId = (String)fieldMap.get("fId");//文件MD5
+//            String fId = (String)fieldMap.get("fId");//文件MD5
+            String fId = StringUtils.getNowToString();
+            fieldMap.put("fId", fId);
             
             //获取文件后缀
             String fileSuffixName = FileManageService.getFileSuffixName(filename);
@@ -154,15 +160,15 @@ import com.zzxy.NetDict.Tools.StringUtils;
             long fileSize = item.getSize(); 
             fieldMap.put("fileSize",fileSize);
             
-            System.out.println("文件大小："+fileSize);
+//            System.out.println("文件大小："+fileSize);
             
             if("".equals(filename) && fileSize == 0)  
             {             
                 System.out.println("文件名为空 ...");  
             }  
             fieldMap.put("fName",filename);
-            System.out.println("path="+filePath + "/" + filename);
-            String uploadFilePath = filePath + "/" + filename;
+//            System.out.println("path="+filePath + "/" + filename);
+            String uploadFilePath = filePath + "/" + fId + fileSuffixName;
             File uploadFile = new File(uploadFilePath);  
             
             System.out.println("fileUploadPath = "+uploadFilePath);
@@ -183,6 +189,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
          */
         private static boolean wirteDB(Map<String,Object> fieldMap)
         {
+        	
         	NDFile file = new NDFile();
         	String fId = (String)fieldMap.get("fId");
         	String fName = (String)fieldMap.get("fName");

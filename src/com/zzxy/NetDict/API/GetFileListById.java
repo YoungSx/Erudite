@@ -39,6 +39,9 @@ public class GetFileListById extends HttpServlet {
 		doGet(request, response);
 	}
 	
+	
+	
+	//request需要提交的表单：  fdId:文件夹id
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub

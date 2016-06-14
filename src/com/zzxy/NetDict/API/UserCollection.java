@@ -45,6 +45,7 @@ public class UserCollection extends HttpServlet {
 	}
 	
 	
+	//request需要提交的表单为：fId:文件Id
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		super.service(req, resp);
@@ -54,6 +55,9 @@ public class UserCollection extends HttpServlet {
 		if(user == null)
 		{
 			//提示登录
+			//指引用户登录
+        	resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
 			return ;
 		}
 		

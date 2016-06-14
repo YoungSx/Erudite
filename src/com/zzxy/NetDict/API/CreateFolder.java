@@ -45,7 +45,7 @@ public class CreateFolder extends HttpServlet {
 		doGet(request, response);
 	}
 
-	
+	//request需要提交的参数:    fd_name:文件夹名称，fd_super:文件夹的父文件夹，如果是根目录，则为base
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		super.service(req, resp);
@@ -56,6 +56,8 @@ public class CreateFolder extends HttpServlet {
 		AccountManageDao am = new AccountManageDaoImpl();
 		if(am.checkPerm(user)!=0)
 		{
+			resp.getWriter().write("<script>alert('您没有权限！');window.location.href='/Erudite/WebPages/index.jsp';</script>");
+        	resp.getWriter().flush();
 			return;
 		}
 		

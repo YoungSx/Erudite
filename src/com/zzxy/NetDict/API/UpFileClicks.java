@@ -25,6 +25,8 @@ public class UpFileClicks extends HttpServlet {
     }
 
 
+    
+    //request需要提交的表单内容：fId:文件id
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub

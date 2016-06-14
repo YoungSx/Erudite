@@ -13,6 +13,7 @@ import com.zzxy.NetDict.Dao.AccountManageDao;
 import com.zzxy.NetDict.DaoImpl.AccountManageDaoImpl;
 import com.zzxy.NetDict.Entity.User;
 import com.zzxy.NetDict.Tools.JsonData;
+import com.zzxy.NetDict.Tools.SendJsonData;
 
 /**
  * Servlet implementation class UpdateConfigFile
@@ -28,6 +29,9 @@ public class UpdateConfigFile extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    
+    
+    //request需要提交的表单为:cfgName:需要修改的值的名称，cfgValue：对应的值
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	super.service(req, resp);
@@ -36,6 +40,16 @@ public class UpdateConfigFile extends HttpServlet {
     	HttpSession session = req.getSession();
     	
     	User user = (User)session.getAttribute("user");
+    	if(user == null)
+    	{
+    		//指引用户登录
+        	resp.getWriter().write("<script>alert('请先登录！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+        	resp.getWriter().flush();
+        	return;
+	    	
+    	}
+    	
+    	
     	JsonData jd = new JsonData();
     	
     	AccountManageDao am = new AccountManageDaoImpl();
@@ -53,6 +67,8 @@ public class UpdateConfigFile extends HttpServlet {
     	jd.setData("修改成功!");
     	jd.setErr(0);
     	jd.setSuc(1);
+    	
+    	SendJsonData.SendJson(resp, jd);
     }
 
 }
