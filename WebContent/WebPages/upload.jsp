@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="sources/style/common/style.css">
     <!-- Resource style -->
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
+    <script src="sources/script/common/config.js"></script><!-- 配置 -->
     <script src="sources/script/upload/upload.js"></script>
 </head>
 <body>
