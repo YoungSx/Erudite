@@ -51,3 +51,4 @@
         readySubmit(event.dataTransfer.files);
     }
 }
+dropUpload();

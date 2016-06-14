@@ -12,18 +12,7 @@ jQuery(document).ready(function($){
 		loadingBar = $('#cd-loading-bar');
 
 	//select a new section
-	dashboard.on('click', 'a', function(event){
-		event.preventDefault();
-		var target = $(this),
-			//detect which section user has chosen
-			sectionTarget = target.data('menu');
-		if( !target.hasClass('selected') && !isAnimating ) {
-			//if user has selected a section different from the one alredy visible - load the new content
-			triggerAnimation(sectionTarget, true);
-		}
-
-		firstLoad = false;
-	});
+	
 
 	//detect the 'popstate' event - e.g. user clicking the back button
   	$(window).on('popstate', function() {
