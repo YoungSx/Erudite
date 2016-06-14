@@ -109,7 +109,7 @@
       <div class="detailedList"><a href="#">表格/模板</a></div>
     </div>
     <div class="detailed" id="examination">
-    <div id="p2">资格考试</div>
+      <div id="p2">资格考试</div>
       <div class="detailedList"><a href="#">财会类</a></div>
       <div class="detailedList"><a href="#">公务员类</a></div>
       <div class="detailedList"><a href="#">学历类</a></div>
@@ -120,8 +120,8 @@
       <div class="detailedList"><a href="#">医药类</a></div>
       <div class="detailedList"><a href="#">计算机类</a></div>
     </div>
-        <div class="detailed" id="leisureife">
-        <div id="p3">教育教学</div>
+    <div class="detailed" id="leisureife">
+      <div id="p3">生活休闲</div>
       <div class="detailedList"><a href="#">饮食</a></div>
       <div class="detailedList"><a href="#">游戏</a></div>
       <div class="detailedList"><a href="#">体育/运动</a></div>
