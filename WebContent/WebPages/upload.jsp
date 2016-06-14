@@ -65,7 +65,7 @@
             <div id="fileDiv">
                 <form name="formUpload" id="formUpload">
                     <div class="fileButton">
-                        <input onChange="submitFile()" type="file" name="pic" id="pic" mutiple accept="*/*" class="fileInput">
+                        <input onChange="readySubmit(this.files)" type="file" name="pic" id="pic" multiple="multiple" accept="*/*" class="fileInput">
                         <span>上传</span>
                     </div>
                 </form>

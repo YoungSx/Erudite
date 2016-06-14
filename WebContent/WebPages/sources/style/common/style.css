@@ -15,7 +15,7 @@ body {
 	font-size: 1.6rem;
 	font-family: "PT Sans", sans-serif;
 	color: #004070;
-	background-color: #0F88EB;
+	background-color: #00B46E;
 }
 
 a {
@@ -776,10 +776,14 @@ scale
 	padding: calc(20% - 16px) 0px;
 }
 
+.descriptFileName{
+
+}
 #dropTips {
 	margin-left: 110px;
 	color: #FFFFFF;
 	margin-top: 10px;
+	margin-left: 110px; 
 	font-size: 14px;
 	opacity: 0.6;
 }
@@ -793,13 +797,13 @@ scale
 
 .uploadDescribe {
 	padding-top: 10%;
+	padding-left: 30%;
 	color: #000000;
 	font-size: 18px;
 }
 
 .uploadList {
 	margin-top: 20px;
-	float: left;
 }
 
 .uploadListName {
@@ -823,35 +827,38 @@ scale
 
 .uploadDescribeTextarea {
 	resize: none;
-	width: 300px;
-	height: 100px;
+	width: 316px;
+	height: 156px;
 }
 
-.uploadDescribeSubmit {
-	margin-top: 110px;
-	display: block;
-	border: 1px solid #000000;
-	text-align: center;
-	line-height: 24px;
-	color: #000000;
-	font-size: 18px;
-	height: 30px;
-	width: 13%;
-	margin-left: 40%;
-	line-height: 28px;
+#uploadDescribeSubmit {
+    margin-top: 125px;
+    margin-left: 350px;
+    border: 1px solid #ffffff;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    height: 30px;
+    width: 80px;
+    line-height: 28px;
+    cursor: pointer;
+    clear:both;
+    margin-bottom: 50px;
+    position: relative;
+    top: 25px;
 }
 
-.uploadDescribeSubmit a {
-	color: #000000;
+#uploadDescribeSubmit a {
+	color: #ffffff;
 }
 
-.File1 {
+.File {
 	min-height: 160px;
 	width: 80%;
-	padding-top: 15px;
-	padding-bottom: 20px;
-	margin-left: 120px;
+	padding: 15px;
 	background-color: #FFFFFF;
+    float: left;
+    border-bottom: black 1px dotted;
 }
 
 #fileLeft {
@@ -861,7 +868,7 @@ scale
 }
 
 #fileRight {
-	float: left;
+	padding-top: 15px;
 	width: 50%;
 	height: 100%;
 }
@@ -981,7 +988,7 @@ scale
 	border-left: 1px solid #A469CA;
 	border-bottom: 1px solid #A469CA;
 	width: 50px;
-	color: #FFFFFF;
+	color: #000000;
 	-moz-appearance: none;
 }
 

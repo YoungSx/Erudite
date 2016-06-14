@@ -60,7 +60,8 @@
 <main class="cd-main">
   <section class="cd-section view visible">
     <header>
-    <div class="slogan">看最新的热度排行</div>
+    <div class="slogan">查看文件？去“探索”吧！</div>
+    <!-- 
     <div class="hot">
       <div class="top" id="top1">
         <a><li style="text-align: center;">总排行</li></a> 
@@ -141,6 +142,7 @@
         <a><li>10. 文件名.png</li></a>  
       </div>
     </div>
+     -->
     </header>
     <!-- .cd-content --> 
   </section>

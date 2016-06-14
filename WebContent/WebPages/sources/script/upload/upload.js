@@ -11,7 +11,7 @@ function readySubmit(files){
 	
     descriptHTML="<div class='uploadDescribe' id='upload-content'><form action=''>";
     for(var i=0;i<files.length;i++){
-        descriptHTML+="<div class='File"+ i +"'><div class='fileLeft'>"+
+        descriptHTML+="<div class='File' id='File"+ i +"'><div class='fileLeft'>"+
         	"<div class='descriptFileName'>文件名："+ files[i].name +"</div>"+//name不对
         	"<div class='uploadListName'>文件分类：</div>"+
         	"<div class='uploadList'>"+
@@ -33,6 +33,8 @@ function readySubmit(files){
     var cdSection = document.getElementsByClassName("cd-section")[0];
     var tempHTML=cdSection.innerHTML;
     cdSection.innerHTML+=descriptHTML;
+    
+    document.getElementsByClassName("cd-scroll")[0].click();
     
     var uploadDescribeSubmit = document.getElementById("uploadDescribeSubmit");
     uploadDescribeSubmit.addEventListener("click", function(){
@@ -90,4 +92,6 @@ function uploadCanceled(event){
 }
 function uploadEnd(event){
     console.log("upload end");
+    alert("上传完毕");
+    window.location.href=EruditeHost + "Erudite/WebPages/upload.jsp"
 }

@@ -45,6 +45,7 @@ function dropUpload() {
 		 * reader.readAsDataURL(file);
 		 */
 		event.preventDefault();
+		console.log(event.dataTransfer.files);
 		readySubmit(event.dataTransfer.files);
 	}
 }

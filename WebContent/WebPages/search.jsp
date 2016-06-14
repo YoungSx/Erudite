@@ -63,11 +63,11 @@
       <div id="search" >
         <form action="result.jsp">
             <select name="searchType" id="searchType">
-                <option value="multiple">综合</option>
-                <option value="document">文档</option>
-                <option value="pictrue">图片</option>
-                <option value="video">视频</option>
-                <option value="audio">音频</option>
+                <option value="1">综合</option>
+                <option value="2">文档</option>
+                <option value="3">图片</option>
+                <option value="4">视频</option>
+                <option value="5">音频</option>
             </select>
             <input type="text" placeholder="在此键入搜索" name="searchBox" id="searchBox">
             <input type="submit" value=" " id="searchButton">
