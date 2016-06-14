@@ -34,10 +34,11 @@ function login(){
 					console.log("secuss");
 					
 				    alert("登陆成功");
-				    User.append("userName",resObj.data.account);
-				    User.append("nickName",resObj.data.nick_name);
-				    User.append("email",resObj.data.e_mail);
-				    console.log(User.userName);
+//				    User.append("userName",resObj.data.account);
+//				    User.append("nickName",resObj.data.nick_name);
+//				    User.append("email",resObj.data.e_mail);
+//				    console.log(User.userName);
+				    window.location.href=EruditeHost + "/Erudite/WebPages/upload.jsp"
 				}else{
 					alert("登陆失败");
 				}

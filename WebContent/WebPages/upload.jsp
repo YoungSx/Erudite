@@ -12,6 +12,8 @@
     <!-- Resource style -->
     <script src="sources/script/common/modernizr.js"></script><!-- Modernizr -->
     <script src="sources/script/common/config.js"></script><!-- 配置 -->
+    <script src="sources/script/common/func.js"></script><!-- 通用函数库 -->
+    <script src='sources/script/getFolders/getuploadfolders.js'></script>
     <script src="sources/script/upload/upload.js"></script>
 </head>
 <body>
