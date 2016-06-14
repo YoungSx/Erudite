@@ -8,7 +8,7 @@ var baseFolders;
  */
 function getFoldersById(id){
 	childFoldersObj = JSONRequest("http://localhost:8080/Erudite/GetFoldersById?fdId="+id, "GET");
-	console.log(childFoldersObj);
+//	console.log(childFoldersObj);
 	return childFoldersObj;
 }
 /*
@@ -29,7 +29,7 @@ function getFolders(){
 		document.write("<a href='#" + baseFolders[key].fd_id + "' class='btn'>" + baseFolders[key].fd_name + '</a>');
 
 	}
-	console.log(baseFolders);
+//	console.log(baseFolders);
 }
 
 function getChildFolders(){
@@ -40,38 +40,18 @@ function getChildFolders(){
 		
 		childFolders = childFolders.data;
 		if(childFolders.length != 0){
-//			遍历子分类
-			
+
+			//			遍历子分类
 			for(var key2 in baseFolders){
 				
 				document.write("<div class='detailedList' id='" + childFolders[key2].fd_id + "'><a href='#'>" + childFolders[key2].fd_name + "</a></div>");
 				
-				
-				
 			}
-			
-			
-			/*
-			 *     <div class="detailed" id="education">
-    <div id="p2">教育教学</div>
-      <div class="detailedList"><a href="#">幼儿教育</a></div>
-      <div class="detailedList"><a href="#">小学教育</a></div>
-      <div class="detailedList"><a href="#">初中教育</a></div>
-      <div class="detailedList"><a href="#">高中教育</a></div>
-      <div class="detailedList"><a href="#">职业教育</a></div>
-      <div class="detailedList"><a href="#">成人教育</a></div>
-      <div class="detailedList"><a href="#">文库题库</a></div>
-      <div class="detailedList"><a href="#">高等教育</a></div>
-    </div>
-			 */
-			
 		}
 		
 		document.write("</div>");
 	}
 }
-
-
 
 function toFileListPage(id) {//跳转到文件列表页
 	window.location.href='http://localhost:8080/Erudite/WebPages/typeResult.jsp?typeId='+id;
@@ -83,9 +63,7 @@ function addChildFolderClick(){//绑定子分类点击跳转事件
 	//子分类绑定点击跳转事件
 	for (var i = 0; i < detailedList.length; i++) {
 		detailedList[i].addEventListener("click", function() {
-			
-			toFileListPage(typeName.id);
+			toFileListPage(this.getAttribute("id"));
 		});
 	}
 }
-//getFolders();//执行获取目录操作
