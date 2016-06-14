@@ -4,7 +4,7 @@
 if(typeof(User)!='object')	var User=new Object();
 function login(){
 	
-	console.log("切换到Login页面");
+	console.log("Login正在载入");
 	
 	
 	
@@ -45,3 +45,5 @@ function login(){
 	}
 
 }
+
+login();

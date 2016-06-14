@@ -83,8 +83,6 @@
 <script src="sources/script/common/jquery-2.1.4.js"></script>
 <script src="sources/script/common/velocity.min.js"></script>
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
-<script src="sources/script/person/md5.js"></script>
 <script src="sources/script/person/register.js"></script>
-<script src="sources/script/upload/dropUpload.js"></script>
 </body>
 </html>

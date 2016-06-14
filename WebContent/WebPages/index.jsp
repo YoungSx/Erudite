@@ -146,7 +146,5 @@
 <script src="sources/script/common/main.js"></script> <!-- Resource jQuery -->
 <script src="sources/script/common/func.js"></script><!-- 通用函数库 -->
 <script src="sources/script/getFolders/getfolders.js"></script>
-<script src="sources/script/person/login.js"></script>
-<script src="sources/script/upload/dropUpload.js"></script>
 </body>
 </html>
