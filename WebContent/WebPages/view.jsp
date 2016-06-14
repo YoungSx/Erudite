@@ -63,9 +63,7 @@
 		<!-- <iframe src=""></iframe> -->
      </div>
     <div class="relation">
-    文档关联<br><br>这就是文档关联
-      过几天就有了<br>
-      再等会  
+	    暂无相关文档...
 
     </div>
       </div>

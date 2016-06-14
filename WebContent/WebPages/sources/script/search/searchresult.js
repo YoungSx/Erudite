@@ -56,14 +56,11 @@ function veiwFileListPage(id) {
 	document.getElementById("result").innerHTML = resultShow;
 }
 
-document.body.onload = function() {
-	var typeId = "";
-	typeId = getQueryString("typeId");
-	if (typeId == null) {// 如果获取不到就返回
-		console.log("cannot get type Id");
-		return 0;
-	}// 否则继续执行veiwFileListPage
-	console.log("typeId:" + typeId);
-
-	veiwFileListPage(typeId);
+var typeId = "";
+typeId = getQueryString("typeId");
+if (typeId == null) {
+	console.log("cannot get type Id");
 }
+console.log("typeId:" + typeId);
+
+veiwFileListPage(typeId);
