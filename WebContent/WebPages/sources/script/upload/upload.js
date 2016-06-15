@@ -24,8 +24,8 @@ function readySubmit(files){
         descriptHTML+="</select>"+
             "</div></div>"+
             "<div id='fileRight'><div class='uploadListName2'>文件描述：</div>"+
-            "<div class='uploadDescribeText'>"+
-            "<textarea name='descrp' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>"+
+            "<div class='uploadDescribeText'>" +
+            "<textarea name='descrp' id='descriptText' class='descriptText' cols='30' rows='10'></textarea>"+
             "</div>"+
             "</div></div>";
     }
@@ -60,15 +60,25 @@ function readySubmit(files){
     uploadDescribeSubmit.addEventListener("click", function(){
     	console.log(filesList);
     	//debugger;
-    	for(var i=0;i<filesList.length;i++){//遍历所有文件对应的分类和描述
+    	/*for(var i=0;i<filesList.length;i++){//遍历所有文件对应的分类和描述
             var sel=document.getElementById("descriptType"+i)
             var descriptType=sel.options[sel.options.selectedIndex].text;//读取选择的分类
             var descriptText=document.getElementById("descriptText"+i);//读取描述
             
-            uploadForm.append("descript"+i,[descriptText,descriptType]);//待续
+            uploadForm.append("descrp",descriptText);
+            uploadForm.append("fdId",childSelect);//待续
             
             //debugger;
-        }
+        }*/
+ 
+            var sel=document.getElementById("childSelect")
+            var descriptType=sel.options[sel.options.selectedIndex].value;//读取选择的分类
+            var descriptText=document.getElementById("descriptText").value;//读取描述
+            
+            uploadForm.append("descrp",descriptText);
+            uploadForm.append("fdId",descriptType);//待续
+            
+            
     	submitFile(files);
     });
     
@@ -82,14 +92,18 @@ function submitFile(files){
             uploadForm.append("file"+i,files[i]);
             console.log("file"+i);
         }
-
+    
+    console.log("descrp:" + uploadForm.get("descrp"));
+    console.log("fdId:" + uploadForm.get("fdId"));
+    
+    
     var oReq=new XMLHttpRequest();
     oReq.addEventListener("progress",uploadProgress,false);
     oReq.addEventListener("load",uploadComplete,false);
     oReq.addEventListener("error",uploadFailed,false);
     oReq.addEventListener("abort",uploadCanceled,false);
     oReq.addEventListener("loadend",uploadEnd,false);
-
+    debugger;
     oReq.open("POST",EruditeHost + "Erudite/FileUpload");//目标文件
     oReq.send(uploadForm);
 }

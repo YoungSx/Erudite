@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.zzxy.NetDict.DB.DBBase;
+import com.zzxy.NetDict.DB.DBHelp;
 import com.zzxy.NetDict.Dao.FolderManageDao;
 import com.zzxy.NetDict.Entity.Folder;
 
@@ -29,6 +30,8 @@ public class FolderManageDaoImpl implements FolderManageDao {
 				folder.setFd_name(fd_name);
 				list.add(folder);
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -53,6 +56,8 @@ public class FolderManageDaoImpl implements FolderManageDao {
 				folder.setFd_name(fd_name);
 				list.add(folder);
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -84,7 +89,7 @@ public class FolderManageDaoImpl implements FolderManageDao {
 		
 		return db.saveOrUpdate(sql, folder.getFd_name(),folder.getFd_id());
 	}
-	
+
 	
 
 }

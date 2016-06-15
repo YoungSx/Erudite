@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import com.zzxy.NetDict.API.FormDataDecode;
+import com.zzxy.NetDict.DB.DBHelp;
 import com.zzxy.NetDict.Dao.AccountManageDao;
 import com.zzxy.NetDict.DaoImpl.AccountManageDaoImpl;
 import com.zzxy.NetDict.Entity.User;
@@ -83,6 +84,7 @@ public class AccountManageService {
                  
                  return user;
              }
+             amd.closeDb();//ysx
         } catch (NumberFormatException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -92,5 +94,6 @@ public class AccountManageService {
         }
          return null;
      }
-
+     
+    
 }

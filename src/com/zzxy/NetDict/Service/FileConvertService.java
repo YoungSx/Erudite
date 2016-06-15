@@ -43,7 +43,9 @@ public class FileConvertService {
 				
 				FileManageService.fileConvert2previewFile(filePath,ConfigParams.HTMLFILE_PATH+FileManageService.getFileName(filePath)+".html");
 				String sql1 = "UPDATE files SET html_path = ? WHERE f_id = ?";
-				String htmlpath = ConfigParams.HTMLFILE_PATH+FileManageService.getFileName(filePath)+".html";
+				//ysx
+				//String htmlpath = ConfigParams.HTMLFILE_PATH+FileManageService.getFileName(filePath)+".html";
+				String htmlpath = "/Erudite/htmls/"+FileManageService.getFileName(filePath)+".html";
 				String id1 = FileManageService.getFileName(filePath);
 				db.saveOrUpdate(sql1, htmlpath,id1);
 			}else

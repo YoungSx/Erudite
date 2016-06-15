@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.zzxy.NetDict.DB.DBBase;
+import com.zzxy.NetDict.DB.DBHelp;
 import com.zzxy.NetDict.Dao.FileManageDao;
 import com.zzxy.NetDict.Entity.NDFile;
 import com.zzxy.NetDict.Entity.User;
@@ -48,6 +49,8 @@ public class FileManageDaoImpl implements FileManageDao {
 				file.setClicks(rs.getDouble("clicks"));
 				list.add(file);
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);//ysx
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -75,6 +78,8 @@ public class FileManageDaoImpl implements FileManageDao {
 				file.setDescrp(rs.getString("descrp"));
 				file.setClicks(rs.getDouble("clicks"));
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);//ysx
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -100,6 +105,8 @@ public class FileManageDaoImpl implements FileManageDao {
 				
 				list.add(file);
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);//ysx
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -181,6 +188,8 @@ public class FileManageDaoImpl implements FileManageDao {
 				file.setClicks(rs.getDouble("clicks"));
 				list.add(file);
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);//ysx
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -231,7 +240,8 @@ public class FileManageDaoImpl implements FileManageDao {
 				file = getFileById(rs.getString("f_id"));
 				list.add(file);
 			}
-			
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);//ysx
 		}catch(Exception e)
 		{
 			e.printStackTrace();

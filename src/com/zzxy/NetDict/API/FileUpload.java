@@ -107,17 +107,23 @@ import com.zzxy.NetDict.Tools.StringUtils;
                     FileItem item = (FileItem)iter.next();  
                     if(item.isFormField())  
                     {  
+                    	String value=item.getString();
+                    	value = new String(value.getBytes("ISO-8859-1"),"UTF-8");
                         System.out.println("处理表单内容 ..."); 
                         processFormField(item,fieldMap);
                         
                     }else
                     {  
+                    	String value=item.getString();
                         System.out.println("处理上传的文件 ...");  
                         processUploadFile(item,fieldMap);  
 
                     }  
                 }// end while()  
-                
+                /**
+                 * 文件上传完毕，执行数据库写入
+                 */
+                wirteDB(fieldMap);
             }catch(Exception e){  
                 System.out.println("使用 fileupload 包时发生异常 ...");  
                 e.printStackTrace();  
@@ -178,7 +184,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
             /**
              * 文件上传完毕，执行数据库写入
              */
-            wirteDB(fieldMap);
+            //wirteDB(fieldMap);
             
         }  
         
@@ -196,6 +202,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
         	int mimeType = (int)fieldMap.get("mimeType");
         	long fileSize = (long)fieldMap.get("fileSize");
         	String filePath = (String)fieldMap.get("filePath");
+        	String testArg = (String)fieldMap.get("testArg");
         	String descrp = (String)fieldMap.get("descrp");
         	String fdId = (String)fieldMap.get("fdId");
         	String modified = StringUtils.getNowToString();

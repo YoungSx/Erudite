@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class DBBase {
 
-	private Connection conn = null;
+	public Connection conn = null;
 	
 	private PreparedStatement ps = null;
 	

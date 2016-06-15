@@ -62,5 +62,21 @@ public class DBHelp {
 			e.printStackTrace();
 		}
 	}
+	//ysx
+	public static void closeConn(Connection conn){
+		try{
+			
+			
+			if(conn != null)
+			{
+				conn.close();
+				conn = null;
+			}
+		}
+		catch (Exception e )
+		{
+			e.printStackTrace();
+		}
+	}
 	
 }

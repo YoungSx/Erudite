@@ -2,6 +2,7 @@ package com.zzxy.NetDict.Dao;
 
 import java.sql.ResultSet;
 
+import com.zzxy.NetDict.DB.DBHelp;
 import com.zzxy.NetDict.Entity.User;
 
 public interface AccountManageDao {
@@ -29,4 +30,5 @@ public interface AccountManageDao {
      */
     public int checkPerm(User user);
     
+    public void closeDb();//ysx
 }

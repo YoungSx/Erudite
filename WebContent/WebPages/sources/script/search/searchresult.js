@@ -1,8 +1,7 @@
 
 // 文件预览功能
 function viewFile(fileId, transitionPath) {// 未完成
-	window.location.href = EruditeHost + "Erudite/WebPages/view.jsp?transitionPath="
-			+ transitionPath;
+	window.location.href = EruditeHost + "Erudite/WebPages/view.jsp?transitionPath=" + transitionPath;
 	// console.log("跳转完毕");
 }
 
@@ -11,21 +10,20 @@ function dlFile(realPath) {// 未完成
 }
 
 function getFile(rsEle) {
-	if (rsEle.transitionPath != undefined) { // 有路径，代表能预览，执行预览
+	if (rsEle.getAttribute("transitionpath") != "") { // 有路径，代表能预览，执行预览
 		console.log("预览文件");
-		viewFile(rsEle.id, rsEle.transitionPath);
+		viewFile(rsEle.id, rsEle.getAttribute("transitionpath"));
 	} else {// 没有路径，不能预览，执行下载
 		console.log("下载文件");
-		dlFile(this.realPath);
+		dlFile(rsEle.getAttribute("realpath"));
 	}
 }
 
 // 遍历文件功能
 
 // 显示文件列表页
-function veiwFileListPage(id) {
-	var resObj = JSONRequest(
-			"" + id, "GET");
+function veiwFileListPage(queryStr,qf) {
+	var resObj = JSONRequest(EruditeHost + "Erudite/QueryServlet?queryStr=" + queryStr + "&qf=" + qf, "GET");
 	var resultShow = "";
 	if (resObj == false) {
 		console.log("get faled");
@@ -43,8 +41,8 @@ function veiwFileListPage(id) {
 			var transitionPath = "";
 			if ("html_path" in resObj.data[i])
 				transitionPath = resObj.data[i].html_path;
-			resultShow += "<div class='resultShow' realPath=" + realPath +
-					"transitionPath='" + transitionPath + "' id='" + id
+			resultShow += "<div class='resultShow' realPath='" + realPath +
+					"' transitionPath='" + transitionPath + "' id='" + id
 					+ "' onClick='getFile(this)'>" + // 绑定点击事件，查看文件详情
 					"<div class='fileIcon' ><img src='" + IconUrl + "'></div>"
 					+ "<div class='fileName'> " + fileName + " </div>"
@@ -56,11 +54,11 @@ function veiwFileListPage(id) {
 	document.getElementById("result").innerHTML = resultShow;
 }
 
-var typeId = "";
-typeId = getQueryString("typeId");
-if (typeId == null) {
-	console.log("cannot get type Id");
+var queryStr = "" , type = "";
+queryStr = getQueryString("searchBox");
+type = getQueryString("searchType");
+if (queryStr == null) {
+	console.log("cannot get queryStr");
 }
-console.log("typeId:" + typeId);
 
-veiwFileListPage(typeId);
+veiwFileListPage(queryStr,type);

@@ -69,7 +69,6 @@ function selectChange(selEle){
     var childSelectEle=document.createElement("select");
     childSelectEle.id="childSelect";
     childSelectEle.name="fdId";
-    childSelectEle.selectedIndex=-1;
 //    console.log(folders);
     var childFolders = folders[va][1];
     for(var key in childFolders){

@@ -3,6 +3,7 @@ package com.zzxy.NetDict.DaoImpl;
 import java.sql.ResultSet;
 
 import com.zzxy.NetDict.DB.DBBase;
+import com.zzxy.NetDict.DB.DBHelp;
 import com.zzxy.NetDict.Dao.AccountManageDao;
 import com.zzxy.NetDict.Entity.User;
 import com.zzxy.NetDict.Tools.StringUtils;
@@ -67,6 +68,8 @@ public class AccountManageDaoImpl implements AccountManageDao {
 			{
 				perm = rs.getInt("perm");
 			}
+			if(db.conn!=null)
+				DBHelp.closeConn(db.conn);//ysx
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -74,5 +77,12 @@ public class AccountManageDaoImpl implements AccountManageDao {
 		
 		return perm;
 	}
+
+	@Override
+	 public void closeDb(){//ysx
+   	 if(db.conn!=null)
+			DBHelp.closeConn(db.conn);
+    }
+
     
 }

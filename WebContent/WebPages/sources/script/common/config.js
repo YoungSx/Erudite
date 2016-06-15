@@ -1,1 +1,1 @@
-var EruditeHost="http://localhost:8080/";
+var EruditeHost="http://121.250.173.159:8080/";

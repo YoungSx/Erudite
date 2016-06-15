@@ -61,13 +61,10 @@
     <header>
     <div class="slogan">发现最想要的知识</div>
       <div id="search" >
-        <form action="result.jsp">
+        <form action="searchResult.jsp">
             <select name="searchType" id="searchType">
-                <option value="1">综合</option>
-                <option value="2">文档</option>
-                <option value="3">图片</option>
-                <option value="4">视频</option>
-                <option value="5">音频</option>
+                <option value="1">文件名</option>
+                <option value="2">文件内容</option>
             </select>
             <input type="text" placeholder="在此键入搜索" name="searchBox" id="searchBox">
             <input type="submit" value=" " id="searchButton">
