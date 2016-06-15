@@ -60,8 +60,16 @@ function buildOption(){
 function selectChange(selEle){
     var index = selEle.selectedIndex;
     var va = selEle.options[index].value;
+    
+    num = selEle.getAttribute('num');
+    var uploadList = document.getElementById("uploadList" + num);
+    if(document.getElementById("childSelect") != null) uploadList.removeChild(document.getElementById("childSelect"));
+    
+    
     var childSelectEle=document.createElement("select");
-    childSelectEle.name="";
+    childSelectEle.id="childSelect";
+    childSelectEle.name="fdId";
+    childSelectEle.selectedIndex=-1;
 //    console.log(folders);
     var childFolders = folders[va][1];
     for(var key in childFolders){
@@ -71,8 +79,8 @@ function selectChange(selEle){
     	childSelectEle.appendChild(tempOption);
     }
     console.log(childSelectEle);
-    num = selEle.getAttribute('num');
-    var uploadList = document.getElementById("uploadList" + num);
+    
+    
     uploadList.appendChild(childSelectEle);
 //    console.log(childFolders);
 }

@@ -16,7 +16,8 @@ function readySubmit(files){
         	"<div class='descriptFileName'>文件名："+ files[i].name +"</div>"+//name不对
         	"<div class='uploadListName'>文件分类：</div>"+
         	"<div class='uploadList' id='uploadList" + i + "'>"+
-        	"<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType' num='"+ i +"' onchange=selectChange(this)>";
+        	"<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType' num='"+ i +"' onchange=selectChange(this)>" +
+        	"<option value=''></option>";
         	
         	
         descriptHTML+=buildOption();
@@ -24,7 +25,7 @@ function readySubmit(files){
             "</div></div>"+
             "<div id='fileRight'><div class='uploadListName2'>文件描述：</div>"+
             "<div class='uploadDescribeText'>"+
-            "<textarea name='descriptText"+ i +"' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>"+
+            "<textarea name='descrp' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>"+
             "</div>"+
             "</div></div>";
     }
@@ -34,7 +35,7 @@ function readySubmit(files){
 //        	"<div class='descriptFileName'>文件名："+ files[i].name +"</div>"+//name不对
 //        	"<div class='uploadListName'>文件分类：</div>"+
 //        	"<div class='uploadList'>"+
-//        	"<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType'>" +
+//        	"<select name='descriptType"+ i +"' id='descriptType"+ i +"' class='descriptType' selectedIndex=-1>" +
 //            "<option value='教育频道'>教育频道</option>"+
 //            "<option value='专业资料'>专业资料</option>"+
 //            "<option value='实用文档'>实用文档</option>"+
@@ -44,7 +45,7 @@ function readySubmit(files){
 //            "</div></div>"+
 //            "<div id='fileRight'><div class='uploadListName2'>文件描述：</div>"+
 //            "<div class='uploadDescribeText'>"+
-//            "<textarea name='descriptText"+ i +"' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>"+
+//            "<textarea name='descrp"+ i +"' id='descriptText"+ i +"' class='descriptText' cols='30' rows='10'></textarea>"+
 //            "</div>"+
 //            "</div></div>";
 //    }
