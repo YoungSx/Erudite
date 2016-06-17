@@ -1,1 +1,1 @@
-var EruditeHost="http://121.250.173.159:8080/";
+var EruditeHost="http://e.shangxin.link:8080/";

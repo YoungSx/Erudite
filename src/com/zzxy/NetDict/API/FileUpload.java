@@ -106,9 +106,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
                 {  
                     FileItem item = (FileItem)iter.next();  
                     if(item.isFormField())  
-                    {  
-                    	String value=item.getString();
-                    	value = new String(value.getBytes("ISO-8859-1"),"UTF-8");
+                    {                      	
                         System.out.println("处理表单内容 ..."); 
                         processFormField(item,fieldMap);
                         
@@ -136,7 +134,8 @@ import com.zzxy.NetDict.Tools.StringUtils;
             throws Exception  
         {  
             String name = item.getFieldName();  
-            String value = item.getString();    
+            String value = item.getString();
+            value = new String(value.getBytes("ISO-8859-1"),"UTF-8");
 //            System.out.println("field === "+ name +"     "+value);
             fieldMap.put(name, value);
         }  
@@ -213,6 +212,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
         	file.setF_name(fName);
         	file.setF_type(mimeType);
         	file.setF_size(fileSize);
+        	//String realPath = "/Erudite/uploadFile/"+filePath.substring(filePath.lastIndexOf("/")+1);
         	file.setReal_path(filePath);
         	file.setDescrp(descrp);
         	file.setFd_id(fdId);

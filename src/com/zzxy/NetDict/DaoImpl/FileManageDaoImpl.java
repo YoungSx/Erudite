@@ -42,7 +42,9 @@ public class FileManageDaoImpl implements FileManageDao {
 				file.setF_name(rs.getString("f_name"));
 				file.setF_type(rs.getInt("f_type"));
 				file.setF_size(rs.getDouble("f_size"));
-				file.setReal_path(rs.getString("real_path"));
+				String rp = rs.getString("real_path");
+				String realPath = "/Erudite/uploadFile/"+rp.substring(rp.lastIndexOf("/")+1);
+				file.setReal_path(realPath);
 				file.setHtml_path(rs.getString("html_path"));
 				file.setThumb_path(rs.getString("thumb_path"));
 				file.setDescrp(rs.getString("descrp"));
