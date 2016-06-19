@@ -47,7 +47,7 @@ function veiwFileListPage(id) {
 					"<div class='fileIcon' ><img src='" + IconUrl + "'></div>"
 					+ "<div class='fileName'> " + fileName + " </div>"
 					+ "<div class='fileDescribe'> " + fileDescribe
-					+ " </div></div>";
+					+ " </div><div class='dlButton' onclick='dlFile()'></div></div>";
 		}
 	}
 	console.log(resultShow);
