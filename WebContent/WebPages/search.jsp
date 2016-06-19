@@ -66,7 +66,7 @@
                 <option value="1">文件名</option>
                 <option value="2">文件内容</option>
             </select>
-            <input type="text" placeholder="在此键入搜索" name="searchBox" id="searchBox">
+            <input type="text" placeholder="   在此键入搜索" name="searchBox" id="searchBox">
             <input type="submit" value=" " id="searchButton">
         </form>
     </div>

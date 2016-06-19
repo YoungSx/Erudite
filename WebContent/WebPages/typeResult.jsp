@@ -58,9 +58,13 @@
 <!-- .cd-side-navigation -->
 <main class="cd-main">
   <section class="cd-section search visible">
+  
 	<div id="result" >
 		结果加载中...
 	</div>
+  <div >
+    结果
+  </div>
   </section>
   <!-- .cd-section --> 
 </main>
