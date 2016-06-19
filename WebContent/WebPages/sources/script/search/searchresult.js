@@ -50,8 +50,8 @@ function veiwFileListPage(queryStr,qf) {
 				 * 2 images
 				 * 
 				 */
-					case "0":
-					case "2":
+					case 0:
+					case 2:
 					
 					transitionPath = realPath;
 					break;

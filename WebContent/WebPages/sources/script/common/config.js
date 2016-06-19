@@ -1,1 +1,1 @@
-var EruditeHost="http://localhost:8080/";
+var EruditeHost="http://e.shangxin.link:8080/";

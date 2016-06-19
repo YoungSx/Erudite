@@ -39,6 +39,7 @@ function veiwFileListPage(id) {
 			var fileDescribe = resObj.data[i].descrp;
 			var id = resObj.data[i].f_id;
 			var transitionPath = "";
+			debugger;
 			if ("html_path" in resObj.data[i])
 				transitionPath = resObj.data[i].html_path;
 			else{
@@ -50,8 +51,8 @@ function veiwFileListPage(id) {
 				   * 2 images
 				   * 
 				   */
-				    case "0":
-				    case "2":
+				    case 0:
+				    case 2:
 				    
 				    transitionPath = realPath;
 				    break;
