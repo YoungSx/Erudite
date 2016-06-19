@@ -41,6 +41,22 @@ function veiwFileListPage(queryStr,qf) {
 			var transitionPath = "";
 			if ("html_path" in resObj.data[i])
 				transitionPath = resObj.data[i].html_path;
+			else{
+				switch(resObj.data[i].f_type){
+				/* 0 txt
+				 * 
+				 * 1 doc
+				 * 
+				 * 2 images
+				 * 
+				 */
+					case "0":
+					case "2":
+					
+					transitionPath = realPath;
+					break;
+				}
+			}
 			resultShow += "<div class='resultShow' realPath='" + realPath +
 					"' transitionPath='" + transitionPath + "' id='" + id
 					+ "' onClick='getFile(this)'>" + // 绑定点击事件，查看文件详情
