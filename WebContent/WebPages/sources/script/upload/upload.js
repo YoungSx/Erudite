@@ -79,7 +79,16 @@ function readySubmit(files){
             uploadForm.append("fdId",descriptType);//待续
             
             
-    	submitFile(files);
+    	var resultString = submitFile(files);
+    	console.log("resultString:" + resultString);
+		var resObj = eval('[' + resultString + ']');
+		if(resObj != 'undefined'){
+			console.log(resObj);
+			if (resObj.suc == 1 && resObj.err == 0) {
+				alert("上传成功");
+				window.location.href=EruditeHost + "Erudite/WebPages/upload.jsp"
+			} else alert("上传失败：" + resObj.data );
+		}
     });
     
     document.getElementsByClassName("cd-scroll")[0].click();
@@ -93,8 +102,8 @@ function submitFile(files){
             console.log("file"+i);
         }
     
-    console.log("descrp:" + uploadForm.get("descrp"));
-    console.log("fdId:" + uploadForm.get("fdId"));
+    //console.log("descrp:" + uploadForm.get("descrp"));
+    //console.log("fdId:" + uploadForm.get("fdId"));
     
     
     var oReq=new XMLHttpRequest();
@@ -106,6 +115,7 @@ function submitFile(files){
     debugger;
     oReq.open("POST",EruditeHost + "Erudite/FileUpload");//目标文件
     oReq.send(uploadForm);
+	return oReq.responseText;
 }
 function uploadProgress(event){
     //progressNumberBar = document.getElementById("progressNumberBar");
@@ -127,6 +137,6 @@ function uploadCanceled(event){
 }
 function uploadEnd(event){
     console.log("upload end");
-    alert("上传完毕");
-    window.location.href=EruditeHost + "Erudite/WebPages/upload.jsp"
+    //alert("上传完毕");
+    //window.location.href=EruditeHost + "Erudite/WebPages/upload.jsp"
 }

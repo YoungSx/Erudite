@@ -23,24 +23,25 @@ public class SolrQuerys {
 	 * @param queryField 匹配字段
 	 * @param queryWords 关键词
 	 */
-	public static List<Map<String,Object>> customSolrQuery(String queryField,List<String> queryWords)
+	public static List<Map<String,Object>> customSolrQuery(String queryField,List<String> queryWords,String condition)
 	{
 		List<Map<String,Object>> matchFilesList = new ArrayList<>();//搜索到的文件的id
 		
 		HttpSolrServer solrServer = SolrManage.getSolrServerInsetence();
 		String queryString = "";
+		condition = condition.trim().toUpperCase();
 		
 		for(int index = 0;index < queryWords.size();index++)
 		{
 			String queryWord = queryWords.get(index);
 			if(queryWord.trim().equals(""))
 			{
-				queryString = queryString.substring(0, queryString.lastIndexOf("AND"));
+				queryString = queryString.substring(0, queryString.lastIndexOf(condition));
 				continue;
 			}
 			if(index < queryWords.size() - 1)
 			{
-				queryString += (queryField +":"+ queryWord + " AND ");
+				queryString += (queryField +":"+ queryWord + " "+condition+" ");
 			}
 			else
 			{

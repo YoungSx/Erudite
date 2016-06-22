@@ -38,7 +38,7 @@ function login(){
 //				    User.append("nickName",resObj.data.nick_name);
 //				    User.append("email",resObj.data.e_mail);
 //				    console.log(User.userName);
-//				    window.location.href=EruditeHost + "/Erudite/WebPages/upload.jsp"
+				    window.location.href=EruditeHost + "Erudite/WebPages/upload.jsp";
 				}else{
 					alert("登陆失败");
 				}

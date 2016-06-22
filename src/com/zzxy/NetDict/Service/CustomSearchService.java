@@ -31,9 +31,11 @@ public class CustomSearchService {
 		
 		List<String> queryWords = CustomAnalyzer.sentenceCut(queryStr);
 		
-		List<Map<String,Object>> queryRS = SolrQuerys.customSolrQuery(queryFieldStr, queryWords);
+		//先搜索交集
+		List<Map<String,Object>> queryRS = SolrQuerys.customSolrQuery(queryFieldStr, queryWords,"AND");
 		
 		FileManageDao fm = new FileManageDaoImpl();
+		
 		for(Map<String,Object> map : queryRS)
 		{
 			String fileId = (String) map.get(ConfigParams.FIELD_ID);
@@ -45,7 +47,22 @@ public class CustomSearchService {
 			}
 			file.setQueryContent(fileContent);
 			fileList.add(file);
-			
+		}
+		
+		//再搜索并集
+		List<Map<String,Object>> queryRSOR = SolrQuerys.customSolrQuery(queryFieldStr, queryWords,"OR");
+		
+		for(Map<String,Object> map : queryRSOR)
+		{
+			String fileId = (String) map.get(ConfigParams.FIELD_ID);
+			String fileContent = (String)map.get(queryFieldStr);
+			NDFile file = fm.getFileById(fileId);
+			if(file.getF_id()==null)
+			{
+				continue;
+			}
+			file.setQueryContent(fileContent);
+			fileList.add(file);
 		}
 		
 		return fileList;

@@ -24,6 +24,8 @@ import com.zzxy.NetDict.DaoImpl.FileManageDaoImpl;
 import com.zzxy.NetDict.Entity.NDFile;
 import com.zzxy.NetDict.Entity.User;
 import com.zzxy.NetDict.Service.FileManageService;
+import com.zzxy.NetDict.Tools.JsonData;
+import com.zzxy.NetDict.Tools.SendJsonData;
 import com.zzxy.NetDict.Tools.StringUtils;  
      
     // Servlet 文件上传  
@@ -56,11 +58,14 @@ import com.zzxy.NetDict.Tools.StringUtils;
         public void doPost(HttpServletRequest req, HttpServletResponse res)  
             throws IOException, ServletException  
         {  
-     
+        	
+        	StringBuffer url = req.getRequestURL();
+        	System.out.println(url);
+        	
+        	
+        	JsonData jd = new JsonData();
         	
 //            System.out.println("文件上传："+getClass());
-            
-            PrintWriter pw = res.getWriter();  
             
             Map<String,Object> fieldMap = new HashMap<>();//form field 参数 + 需要参数
             
@@ -70,9 +75,12 @@ import com.zzxy.NetDict.Tools.StringUtils;
             User user = (User)session.getAttribute("user");
             if(user == null)
             {
-            	//指引用户登录
-            	res.getWriter().write("<script>alert('请登录后上传文件！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
-            	res.getWriter().flush();
+            	jd.setData("请先登录！");
+            	jd.setErr(1);
+            	jd.setSuc(0);
+//            	//指引用户登录
+//            	res.getWriter().write("<script>alert('请登录后上传文件！');window.location.href='/Erudite/WebPages/person.jsp';</script>");
+//            	res.getWriter().flush();
             	return ;
             }
             String account = user.getAccount();
@@ -122,6 +130,14 @@ import com.zzxy.NetDict.Tools.StringUtils;
                  * 文件上传完毕，执行数据库写入
                  */
                 wirteDB(fieldMap);
+                
+                jd.setData("上传成功！");
+                jd.setErr(0);
+                jd.setSuc(1);
+                
+                SendJsonData.SendJson(res, jd);
+                
+                
             }catch(Exception e){  
                 System.out.println("使用 fileupload 包时发生异常 ...");  
                 e.printStackTrace();  
@@ -183,7 +199,7 @@ import com.zzxy.NetDict.Tools.StringUtils;
             /**
              * 文件上传完毕，执行数据库写入
              */
-            //wirteDB(fieldMap);
+//            wirteDB(fieldMap);
             
         }  
         

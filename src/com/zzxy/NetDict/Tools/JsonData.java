@@ -13,8 +13,6 @@ public class JsonData {
 	private Integer err;//失败标志
 	
 	
-	
-	
 	public Object getData() {
 		return data;
 	}

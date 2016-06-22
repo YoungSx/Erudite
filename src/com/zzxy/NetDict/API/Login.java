@@ -68,7 +68,6 @@ public class Login extends HttpServlet {
 	       jd.setSuc(1);
 	       jd.setErr(0);
 	       jd.setData(user);
-	       
 	       SendJsonData.SendJson(resp, jd);
 	   }
 	   else
